@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct BriefBookApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                audioControllersStore: Store(initialState: AudioPlayerFeature.State()) {
+                    AudioPlayerFeature()
+                },
+                tabStore: Store(initialState: TabsFeature.State()) {
+                    TabsFeature()
+            })
         }
     }
 }
