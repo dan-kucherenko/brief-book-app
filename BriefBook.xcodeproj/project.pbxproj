@@ -120,10 +120,10 @@
 				A5467E6A2C4C2610004F0EA9 /* TabsView */,
 				A5467E642C4A853D004F0EA9 /* AudioPlayer */,
 				A5A6D1D12C46D27E00FC1EAB /* BriefBookApp.swift */,
+				A596DA402C46FA0F0011A02C /* LaunchView.swift */,
 				A5A6D1D32C46D27E00FC1EAB /* ContentView.swift */,
 				A5A6D1D52C46D27F00FC1EAB /* Assets.xcassets */,
 				A5A6D1D72C46D27F00FC1EAB /* Preview Content */,
-				A596DA402C46FA0F0011A02C /* LaunchView.swift */,
 			);
 			path = BriefBook;
 			sourceTree = "<group>";

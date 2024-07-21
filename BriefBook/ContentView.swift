@@ -37,7 +37,6 @@ struct ContentView: View {
             TabsView(store: tabStore)
                 .padding(.top, 40)
         }
-        //        .padding()
     }
 }
 

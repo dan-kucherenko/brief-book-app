@@ -83,7 +83,7 @@ struct AudioPlayerFeature {
                 return .none
             case .timeStampChanged(let newTimeStamp):
                 state.currentTime = newTimeStamp
-                print("Timestamp changed to: \(newTimeStamp)")
+                state.player?.currentTime = newTimeStamp
                 return .none
             case .updateTimeStampProgress:
                 state.currentTime = state.player?.currentTime ?? 0
