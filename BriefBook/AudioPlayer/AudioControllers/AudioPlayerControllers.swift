@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct AudioPlayerControllers: View {
-    let store: StoreOf<AudioPlayerControllersFeature>
+    let store: StoreOf<AudioPlayerFeature>
 
     private let playIcon = "play.fill"
     private let pauseIcon = "pause.fill"
@@ -65,8 +65,8 @@ struct AudioPlayerControllers: View {
 
 #Preview {
     AudioPlayerControllers(
-        store: Store(initialState: AudioPlayerControllersFeature.State()) {
-            AudioPlayerControllersFeature()
+        store: Store(initialState: AudioPlayerFeature.State()) {
+            AudioPlayerFeature()
         }
     )
 }
