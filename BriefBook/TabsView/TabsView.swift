@@ -59,7 +59,6 @@ struct TabsView: View {
         .background(
             RoundedRectangle(cornerRadius: 60)
                 .stroke(Color.gray.opacity(0.5), lineWidth: 1)
-//                .background(Color.white.cornerRadius(25))
         )
         .animation(.easeInOut, value: store.selectedTab)
     }
