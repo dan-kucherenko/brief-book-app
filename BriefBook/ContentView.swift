@@ -9,42 +9,29 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ContentView: View {
-    let audioControllersStore: StoreOf<AudioPlayerFeature>
-    let tabStore: StoreOf<TabsFeature>
+    let book: Book
+    let store: StoreOf<AppFeature>
     
     var body: some View {
         VStack {
-            VStack {
-                Image("BookPhotoPlaceholder")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 240)
-                Text("KEY POINT 2 OF 10")
-                    .font(.subheadline)
-                    .bold()
-                    .padding(.top, 30)
-                    .foregroundStyle(.gray)
-                Text("Design is not how a thing looks, but how it works")
-                    .font(.callout)
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 5)
-                    .padding(.horizontal, 25)
-            }
+            BookInformationView(book: book, store: store.scope(state: \.bookInfoState, action: \.bookInfoAction))
             
-            AudioPlayerView(store: audioControllersStore, url: Bundle.main.url(forResource: "test_audio", withExtension: "mp3"))
+            AudioPlayerView(store: store.scope(state: \.audioState, action: \.audioAction), url: book.audioSumup)
                 .padding()
             
-            TabsView(store: tabStore)
+            TabsView(store: store.scope(state: \.tabsState, action: \.tabAction))
                 .padding(.top, 40)
+        }
+        .onAppear {
+            store.send(.bookInfoAction(.setInitialValues(book: book)))
         }
     }
 }
 
 #Preview {
-    ContentView(
-        audioControllersStore: Store(initialState: AudioPlayerFeature.State()) { AudioPlayerFeature()},
-        tabStore: Store(initialState: TabsFeature.State()) {
-            TabsFeature()
-        }
+    ContentView(book: .mock,
+                store: Store(
+                    initialState: AppFeature.State()
+                ) { AppFeature() }
     )
 }

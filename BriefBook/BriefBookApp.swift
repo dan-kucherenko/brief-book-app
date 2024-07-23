@@ -10,15 +10,12 @@ import ComposableArchitecture
 
 @main
 struct BriefBookApp: App {
+    static let store = Store(initialState: AppFeature.State()) {
+      AppFeature()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView(
-                audioControllersStore: Store(initialState: AudioPlayerFeature.State()) {
-                    AudioPlayerFeature()
-                },
-                tabStore: Store(initialState: TabsFeature.State()) {
-                    TabsFeature()
-            })
+            ContentView(book: .mock, store: BriefBookApp.store)
         }
     }
 }

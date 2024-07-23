@@ -12,7 +12,7 @@ import AVFAudio
 @Reducer
 struct AudioPlayerFeature {
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var isPlaying = false
         var totalTime: TimeInterval = 0.0
         var currentTime: TimeInterval = 0.0
@@ -103,7 +103,6 @@ struct AudioPlayerFeature {
                 state.isPlaying.toggle()
                 return .none
             case .previousTrackTapped:
-                print("Prev track clicked")
                 return .none
             case .rewindTapped:
                 // 5 sec backwards
@@ -117,7 +116,6 @@ struct AudioPlayerFeature {
                 return .none
             case .nextTrackTapped:
                 // switch to the next track
-                print("Next track clicked")
                 return .none
             }
         }
@@ -135,4 +133,3 @@ struct AudioPlayerFeature {
         }
     }
 }
-

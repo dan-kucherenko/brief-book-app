@@ -11,7 +11,7 @@ import ComposableArchitecture
 @Reducer
 struct TabsFeature {
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var selectedTab: SelectedTab = .audio
         
         enum SelectedTab {
