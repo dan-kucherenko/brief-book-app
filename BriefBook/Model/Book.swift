@@ -32,11 +32,11 @@ struct Book {
                 "Conclusion"
             ],
             keyPoints: [
-                "Introduction" : 0,
-                "Chapter 1: Getting Started" : 120,
-                "Chapter 2: Deep Dive" : 600,
-                "Chapter 3: Advanced Topics" : 1200,
-                "Conclusion" : 1800
+                "Introduction" : 0.0,
+                "Chapter 1: Getting Started" : 22.4,
+                "Chapter 2: Deep Dive" : 44.8,
+                "Chapter 3: Advanced Topics" : 67.2,
+                "Conclusion" : 89.6
             ],
             audioSumup: Bundle.main.url(forResource: "test_audio", withExtension: "mp3")!
         )

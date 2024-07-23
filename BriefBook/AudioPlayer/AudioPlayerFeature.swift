@@ -55,71 +55,75 @@ struct AudioPlayerFeature {
     }
     
     var body: some ReducerOf<Self> {
-        Reduce { state, action in
-            switch action {
-            case .setupPlayer(let url):
-                return .run { send in
-                    do {
-                        let player = try AVAudioPlayer(contentsOf: url)
-                        player.prepareToPlay()
-                        player.enableRate = true
-                        await send(.playerInitialized(.success(player)))
-                    } catch {
-                        await send(.playerInitialized(.failure(error)))
+            Reduce { state, action in
+                switch action {
+                case .setupPlayer(let url):
+                    return .run { send in
+                        do {
+                            let player = try AVAudioPlayer(contentsOf: url)
+                            player.prepareToPlay()
+                            player.enableRate = true
+                            await send(.playerInitialized(.success(player)))
+                        } catch {
+                            await send(.playerInitialized(.failure(error)))
+                        }
                     }
+                    
+                case .playerInitialized(let result):
+                    switch result {
+                    case .success(let player):
+                        state.player = player
+                        state.totalTime = player.duration
+                    case .failure(let error):
+                        print("Error loading audio: \(error)")
+                    }
+                    return .none
+                    
+                case .totalTimeChanged(let totalTime):
+                    state.totalTime = totalTime
+                    return .none
+                    
+                case .timeStampChanged(let newTimeStamp):
+                    state.currentTime = newTimeStamp
+                    state.player?.currentTime = newTimeStamp
+                    return .none
+                    
+                case .updateTimeStampProgress:
+                    state.currentTime = state.player?.currentTime ?? 0
+                    return .none
+                    
+                case .speedChanged:
+                    state.speed = nextSpeed(currentSpeed: state.speed)
+                    state.player?.rate = state.speed.rawValue
+                    return .none
+                    
+                case .playPauseTapped:
+                    if state.isPlaying {
+                        state.player?.pause()
+                    } else {
+                        state.player?.play()
+                    }
+                    state.isPlaying.toggle()
+                    return .none
+                    
+                case .previousTrackTapped:
+                    return .none
+                    
+                case .rewindTapped:
+                    state.player?.currentTime -= 5
+                    state.currentTime = state.player?.currentTime ?? 0
+                    return .none
+                    
+                case .forwardTapped:
+                    state.player?.currentTime += 10
+                    state.currentTime = state.player?.currentTime ?? 0
+                    return .none
+                    
+                case .nextTrackTapped:
+                    return .none
                 }
-            case .playerInitialized(let result):
-                switch result {
-                case .success(let player):
-                    state.player = player
-                    state.totalTime = player.duration
-                case .failure(let error):
-                    print("Error loading audio: \(error)")
-                }
-                return .none
-                
-            case .totalTimeChanged(let totalTime):
-                state.totalTime = totalTime
-                return .none
-            case .timeStampChanged(let newTimeStamp):
-                state.currentTime = newTimeStamp
-                state.player?.currentTime = newTimeStamp
-                return .none
-            case .updateTimeStampProgress:
-                state.currentTime = state.player?.currentTime ?? 0
-                return .none
-                
-            case .speedChanged:
-                state.speed = nextSpeed(currentSpeed: state.speed)
-                state.player?.rate = state.speed.rawValue
-                return .none
-            
-            case .playPauseTapped:
-                if state.isPlaying {
-                    state.player?.pause()
-                } else {
-                    state.player?.play()
-                }
-                state.isPlaying.toggle()
-                return .none
-            case .previousTrackTapped:
-                return .none
-            case .rewindTapped:
-                // 5 sec backwards
-                state.player?.currentTime -= 5
-                state.currentTime = state.player?.currentTime ?? 0
-                return .none
-            case .forwardTapped:
-                // 10 sec forward
-                state.player?.currentTime += 10
-                state.currentTime = state.player?.currentTime ?? 0
-                return .none
-            case .nextTrackTapped:
-                // switch to the next track
-                return .none
             }
         }
-    }
     
     // MARK: - Function for getting the next speed for audio
     private func nextSpeed(currentSpeed: State.Speed) -> State.Speed {

@@ -24,6 +24,7 @@ struct BookInformationFeature {
         case keyPointMoveForward
         case keyPointMoveBackward
         case chapterTitleChanged(String)
+        case keyPointChanged(TimeInterval)
     }
     
     var body: some ReducerOf<Self> {
@@ -35,21 +36,30 @@ struct BookInformationFeature {
                 state.chapterTitle = book.chapters.first!
                 state.keyPoints = book.keyPoints
                 return .none
+                
             case .keyPointMoveForward:
                 if state.keypoint < state.keyPoints.count {
                     state.keypoint += 1
                     state.chapterTitle = state.chapters[state.keypoint - 1]
+                    let newTime = state.keyPoints[state.chapterTitle] ?? 0
+                    return .send(.keyPointChanged(newTime))
                 }
                 return .none
+                
             case .keyPointMoveBackward:
                 if state.keypoint > 1 {
                     state.keypoint -= 1
                     state.chapterTitle = state.chapters[state.keypoint - 1]
+                    let newTime = state.keyPoints[state.chapterTitle] ?? 0
+                    return .send(.keyPointChanged(newTime))
                 }
                 return .none
                 
             case .chapterTitleChanged(let title):
                 state.chapterTitle = title
+                return .none
+                
+            case .keyPointChanged(_):
                 return .none
             }
         }

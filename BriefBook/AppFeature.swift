@@ -34,62 +34,38 @@ struct AppFeature {
         }
         
         Reduce { state, action in
-//            switch action {
-//            case .audioAction(let audioAction):
-//                switch audioAction {
-//                case .previousTrackTapped:
-//                    return .send(.bookInfoAction(.keyPointMoveBackward))
-//                case .nextTrackTapped:
-//                    return .send(.bookInfoAction(.keyPointMoveForward))
-//                default:
-//                    return .none
-//                }
-//                
-//            case .tabAction(let tabAction):
-//                return .none
-//                
-//            case .bookInfoAction(let bookInfoAction):
-//                switch action {
-//                case .setInitialValues(let book):
-//                    state.bookInfoState = BookInformationFeature.State(
-//                        bookImage: "exampleImageName", // Update with actual logic
-//                        keypoint: 1,
-//                        keyPoints: ["Point 1", "Point 2", "Point 3"],
-//                        chapterTitle: "Example Chapter Title"
-//                    )
-//                    return .none
-//                default:
-//                    return .none
-//                }
-//            }
             switch action {
-                    case .audioAction(let audioAction):
-                        switch audioAction {
-                        case .previousTrackTapped:
-                            return .send(.bookInfoAction(.keyPointMoveBackward))
-                        case .nextTrackTapped:
-                            return .send(.bookInfoAction(.keyPointMoveForward))
-                        default:
-                            return .none
-                        }
-                        
-                    case .tabAction(let tabAction):
-                        return .none
-                        
-                    case .bookInfoAction(let bookInfoAction):
-                        switch bookInfoAction {
-                        case .setInitialValues(let book):
-                            state.bookInfoState = BookInformationFeature.State(
-                                keypoint: 1,
-                                keyPoints: book.keyPoints,
-                                chapterTitle: book.chapters.first!,
-                                chapters: book.chapters
-                            )
-                            return .none
-                        default:
-                            return .none
-                        }
-                    }
+            case .audioAction(let audioAction):
+                switch audioAction {
+                case .previousTrackTapped:
+                    return .send(.bookInfoAction(.keyPointMoveBackward))
+                case .nextTrackTapped:
+                    return .send(.bookInfoAction(.keyPointMoveForward))
+                default:
+                    return .none
+                }
+                
+            case .tabAction(let tabAction):
+                return .none
+                
+            case .bookInfoAction(let bookInfoAction):
+                switch bookInfoAction {
+                case .setInitialValues(let book):
+                    state.bookInfoState = BookInformationFeature.State(
+                        keypoint: 1,
+                        keyPoints: book.keyPoints,
+                        chapterTitle: book.chapters.first!,
+                        chapters: book.chapters
+                    )
+                    return .none
+                    
+                case .keyPointChanged(let newTime):
+                    return .send(.audioAction(.timeStampChanged(newTime)))
+                    
+                default:
+                    return .none
+                }
+            }
         }
     }
 }
