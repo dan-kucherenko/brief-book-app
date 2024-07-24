@@ -18,12 +18,12 @@ struct AudioPlayerFeature {
         var currentTime: TimeInterval = 0.0
         var speed: Speed = .normal
         var player: AVAudioPlayer?
-        
+
         enum Speed: Float {
             case slow = 0.5
             case normal = 1
             case fast = 1.5
-            
+
             var formatted: String {
                 switch self {
                 case .slow:
@@ -36,24 +36,21 @@ struct AudioPlayerFeature {
             }
         }
     }
-    
+
     enum Action {
         case setupPlayer(URL)
         case playerInitialized(Result<AVAudioPlayer, Error>)
-        
         case totalTimeChanged(TimeInterval)
         case timeStampChanged(TimeInterval)
         case updateTimeStampProgress
-        
         case speedChanged
-        
         case previousTrackTapped
         case rewindTapped
         case playPauseTapped
         case forwardTapped
         case nextTrackTapped
     }
-    
+
     var body: some ReducerOf<Self> {
             Reduce { state, action in
                 switch action {
@@ -68,7 +65,7 @@ struct AudioPlayerFeature {
                             await send(.playerInitialized(.failure(error)))
                         }
                     }
-                    
+
                 case .playerInitialized(let result):
                     switch result {
                     case .success(let player):
@@ -78,25 +75,25 @@ struct AudioPlayerFeature {
                         print("Error loading audio: \(error)")
                     }
                     return .none
-                    
+
                 case .totalTimeChanged(let totalTime):
                     state.totalTime = totalTime
                     return .none
-                    
+
                 case .timeStampChanged(let newTimeStamp):
                     state.currentTime = newTimeStamp
                     state.player?.currentTime = newTimeStamp
                     return .none
-                    
+
                 case .updateTimeStampProgress:
                     state.currentTime = state.player?.currentTime ?? 0
                     return .none
-                    
+
                 case .speedChanged:
                     state.speed = nextSpeed(currentSpeed: state.speed)
                     state.player?.rate = state.speed.rawValue
                     return .none
-                    
+
                 case .playPauseTapped:
                     if state.isPlaying {
                         state.player?.pause()
@@ -105,26 +102,26 @@ struct AudioPlayerFeature {
                     }
                     state.isPlaying.toggle()
                     return .none
-                    
+
                 case .previousTrackTapped:
                     return .none
-                    
+
                 case .rewindTapped:
                     state.player?.currentTime -= 5
                     state.currentTime = state.player?.currentTime ?? 0
                     return .none
-                    
+
                 case .forwardTapped:
                     state.player?.currentTime += 10
                     state.currentTime = state.player?.currentTime ?? 0
                     return .none
-                    
+
                 case .nextTrackTapped:
                     return .none
                 }
             }
         }
-    
+
     // MARK: - Function for getting the next speed for audio
     private func nextSpeed(currentSpeed: State.Speed) -> State.Speed {
         switch currentSpeed {

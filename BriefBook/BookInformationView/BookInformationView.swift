@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct BookInformationView: View {
     let book: Book
     let store: StoreOf<BookInformationFeature>
-    
+
     var body: some View {
         VStack {
             Image(.bookPhotoPlaceholder)

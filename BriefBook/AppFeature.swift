@@ -15,13 +15,13 @@ struct AppFeature {
         var audioState = AudioPlayerFeature.State()
         var tabsState = TabsFeature.State()
     }
-    
+
     enum Action {
         case bookInfoAction(BookInformationFeature.Action)
         case audioAction(AudioPlayerFeature.Action)
         case tabAction(TabsFeature.Action)
     }
-    
+
     var body: some ReducerOf<Self> {
         Scope(state: \.bookInfoState, action: \.bookInfoAction) {
             BookInformationFeature()
@@ -32,7 +32,7 @@ struct AppFeature {
         Scope(state: \.tabsState, action: \.tabAction) {
             TabsFeature()
         }
-        
+
         Reduce { state, action in
             switch action {
             case .audioAction(let audioAction):
@@ -44,10 +44,10 @@ struct AppFeature {
                 default:
                     return .none
                 }
-                
+
             case .tabAction(let tabAction):
                 return .none
-                
+
             case .bookInfoAction(let bookInfoAction):
                 switch bookInfoAction {
                 case .setInitialValues(let book):
@@ -58,10 +58,10 @@ struct AppFeature {
                         chapters: book.chapters
                     )
                     return .none
-                    
+
                 case .keyPointChanged(let newTime):
                     return .send(.audioAction(.timeStampChanged(newTime)))
-                    
+
                 default:
                     return .none
                 }

@@ -11,14 +11,14 @@ import ComposableArchitecture
 struct ContentView: View {
     let book: Book
     let store: StoreOf<AppFeature>
-    
+
     var body: some View {
         VStack {
             BookInformationView(book: book, store: store.scope(state: \.bookInfoState, action: \.bookInfoAction))
-            
+
             AudioPlayerView(store: store.scope(state: \.audioState, action: \.audioAction), url: book.audioSumup)
                 .padding()
-            
+
             TabsView(store: store.scope(state: \.tabsState, action: \.tabAction))
                 .padding(.top, 40)
         }

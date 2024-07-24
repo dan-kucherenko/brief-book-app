@@ -17,7 +17,7 @@ struct AudioPlayerControllers: View {
     private let goBackwardIcon = "gobackward.5"
     private let goForwardIcon = "goforward.10"
     private let forwardIcon = "forward.end.fill"
-    
+
     var body: some View {
         HStack(spacing: 20) {
             Button {
@@ -27,7 +27,7 @@ struct AudioPlayerControllers: View {
                     .font(.title)
             }
             .buttonStyle(PlainButtonStyle())
-            
+
             Button {
                 store.send(.rewindTapped)
             } label: {
@@ -35,15 +35,15 @@ struct AudioPlayerControllers: View {
                     .font(.title)
             }
             .buttonStyle(PlainButtonStyle())
-            
+
             Button {
                 store.send(.playPauseTapped)
             } label: {
                 Image(systemName: store.isPlaying ? pauseIcon : playIcon)
                     .font(.largeTitle)
             }
+
             .buttonStyle(PlainButtonStyle())
-            
             Button {
                 store.send(.forwardTapped)
             } label: {
@@ -51,7 +51,7 @@ struct AudioPlayerControllers: View {
                     .font(.title)
             }
             .buttonStyle(PlainButtonStyle())
-            
+
             Button {
                 store.send(.nextTrackTapped)
             } label: {

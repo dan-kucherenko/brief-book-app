@@ -10,16 +10,16 @@ import ComposableArchitecture
 
 struct TabsView: View {
     let store: StoreOf<TabsFeature>
-    
+
     private let audioIcon = "headphones"
     private let textIcon = "text.alignleft"
     private let tabElementWidth: CGFloat = 40
     private let tabElementHeight: CGFloat = 40
     private let iconFontSize: CGFloat = 20
     private let tabsViewWidth: CGFloat = 100
-    
+
     var body: some View {
-        HStack (spacing: 25) {
+        HStack(spacing: 25) {
             ZStack {
                 if store.selectedTab == .audio {
                     Circle()
@@ -36,7 +36,7 @@ struct TabsView: View {
             .onTapGesture {
                 store.send(.tabSelected(TabsFeature.State.SelectedTab.audio))
             }
-            
+
             ZStack {
                 if store.selectedTab == .text {
                     Circle()

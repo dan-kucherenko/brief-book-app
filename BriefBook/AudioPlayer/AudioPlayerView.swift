@@ -11,25 +11,22 @@ import ComposableArchitecture
 struct AudioPlayerView: View {
     let store: StoreOf<AudioPlayerFeature>
     var url: URL?
-        
+
     var body: some View {
         VStack {
             HStack {
                 Text("\(formatTime(store.currentTime))")
-                
+
                 Slider(value: Binding(get: {
                     store.currentTime
                 }, set: { newValue in
                     store.send(.timeStampChanged(newValue))
                 }), in: 0...store.totalTime)
                 .tint(.blue)
-                
                 Spacer()
                 Text("\(formatTime(store.totalTime))")
             }
             .padding(.horizontal)
-            
-            
             Button {
                 store.send(.speedChanged)
             } label: {
@@ -42,7 +39,6 @@ struct AudioPlayerView: View {
             .frame(width: 90)
             .background(.gray).opacity(0.2)
             .cornerRadius(8)
-            
             AudioPlayerControllers(store: store)
                 .padding(.top, 30)
         }

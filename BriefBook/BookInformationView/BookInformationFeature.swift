@@ -18,7 +18,7 @@ struct BookInformationFeature {
         var chapterTitle: String = ""
         var chapters: [String] = []
     }
-    
+
     enum Action {
         case setInitialValues(book: Book)
         case keyPointMoveForward
@@ -26,7 +26,7 @@ struct BookInformationFeature {
         case chapterTitleChanged(String)
         case keyPointChanged(TimeInterval)
     }
-    
+
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
@@ -36,7 +36,6 @@ struct BookInformationFeature {
                 state.chapterTitle = book.chapters.first!
                 state.keyPoints = book.keyPoints
                 return .none
-                
             case .keyPointMoveForward:
                 if state.keypoint < state.keyPoints.count {
                     state.keypoint += 1
@@ -45,7 +44,6 @@ struct BookInformationFeature {
                     return .send(.keyPointChanged(newTime))
                 }
                 return .none
-                
             case .keyPointMoveBackward:
                 if state.keypoint > 1 {
                     state.keypoint -= 1
@@ -54,12 +52,10 @@ struct BookInformationFeature {
                     return .send(.keyPointChanged(newTime))
                 }
                 return .none
-                
             case .chapterTitleChanged(let title):
                 state.chapterTitle = title
                 return .none
-                
-            case .keyPointChanged(_):
+            case .keyPointChanged:
                 return .none
             }
         }
