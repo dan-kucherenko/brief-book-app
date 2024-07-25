@@ -14,9 +14,9 @@ struct BookInformationFeature {
     @ObservableState
     struct State: Equatable {
         var keypoint = 1
-        var keyPoints: [String: TimeInterval] = [:]
         var chapterTitle: String = ""
         var chapters: [String] = []
+        var audioTracks: [URL] = []
     }
 
     enum Action {
@@ -24,7 +24,7 @@ struct BookInformationFeature {
         case keyPointMoveForward
         case keyPointMoveBackward
         case chapterTitleChanged(String)
-        case keyPointChanged(TimeInterval)
+        case keyPointChanged(URL?)
     }
 
     var body: some ReducerOf<Self> {
@@ -34,22 +34,22 @@ struct BookInformationFeature {
                 state.keypoint = 1
                 state.chapters = book.chapters
                 state.chapterTitle = book.chapters.first!
-                state.keyPoints = book.keyPoints
+                state.audioTracks = book.audioTracks
                 return .none
             case .keyPointMoveForward:
-                if state.keypoint < state.keyPoints.count {
+                if state.keypoint < state.chapters.count {
                     state.keypoint += 1
                     state.chapterTitle = state.chapters[state.keypoint - 1]
-                    let newTime = state.keyPoints[state.chapterTitle] ?? 0
-                    return .send(.keyPointChanged(newTime))
+                    let newTrack = state.audioTracks[state.keypoint - 1]
+                    return .send(.keyPointChanged(newTrack))
                 }
                 return .none
             case .keyPointMoveBackward:
                 if state.keypoint > 1 {
                     state.keypoint -= 1
                     state.chapterTitle = state.chapters[state.keypoint - 1]
-                    let newTime = state.keyPoints[state.chapterTitle] ?? 0
-                    return .send(.keyPointChanged(newTime))
+                    let newTrack = state.audioTracks[state.keypoint - 1]
+                    return .send(.keyPointChanged(newTrack))
                 }
                 return .none
             case .chapterTitleChanged(let title):

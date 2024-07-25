@@ -18,6 +18,8 @@ struct AudioPlayerFeature {
         var currentTime: TimeInterval = 0.0
         var speed: Speed = .normal
         var player: AVAudioPlayer?
+        var tracks: [URL] = []
+        var currentTrackIndex = 0
 
         enum Speed: Float {
             case slow = 0.5
@@ -71,6 +73,8 @@ struct AudioPlayerFeature {
                     case .success(let player):
                         state.player = player
                         state.totalTime = player.duration
+                        state.speed = .normal
+                        state.isPlaying = false
                     case .failure(let error):
                         print("Error loading audio: \(error)")
                     }
@@ -104,6 +108,11 @@ struct AudioPlayerFeature {
                     return .none
 
                 case .previousTrackTapped:
+                    if state.currentTrackIndex > 0 {
+                        state.currentTrackIndex -= 1
+                        let newTrack = state.tracks[state.currentTrackIndex]
+                        return .send(.setupPlayer(newTrack))
+                    }
                     return .none
 
                 case .rewindTapped:
@@ -117,6 +126,11 @@ struct AudioPlayerFeature {
                     return .none
 
                 case .nextTrackTapped:
+                    if state.currentTrackIndex < state.tracks.count - 1 {
+                        state.currentTrackIndex += 1
+                        let newTrack = state.tracks[state.currentTrackIndex]
+                        return .send(.setupPlayer(newTrack))
+                    }
                     return .none
                 }
             }

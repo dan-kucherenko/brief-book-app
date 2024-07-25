@@ -18,7 +18,7 @@ struct BookInformationView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 240)
-            Text("KEY POINT \(store.keypoint) OF \(store.keyPoints.count)")
+            Text("KEY POINT \(store.keypoint) OF \(store.chapters.count)")
                 .font(.subheadline)
                 .bold()
                 .padding(.top, 30)

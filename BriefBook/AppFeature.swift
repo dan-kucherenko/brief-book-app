@@ -45,7 +45,7 @@ struct AppFeature {
                     return .none
                 }
 
-            case .tabAction(let tabAction):
+            case .tabAction:
                 return .none
 
             case .bookInfoAction(let bookInfoAction):
@@ -53,14 +53,14 @@ struct AppFeature {
                 case .setInitialValues(let book):
                     state.bookInfoState = BookInformationFeature.State(
                         keypoint: 1,
-                        keyPoints: book.keyPoints,
                         chapterTitle: book.chapters.first!,
-                        chapters: book.chapters
+                        chapters: book.chapters,
+                        audioTracks: book.audioTracks
                     )
                     return .none
 
-                case .keyPointChanged(let newTime):
-                    return .send(.audioAction(.timeStampChanged(newTime)))
+                case .keyPointChanged(let newTrack):
+                    return .send(.audioAction(.setupPlayer(newTrack!)))
 
                 default:
                     return .none

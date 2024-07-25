@@ -16,7 +16,7 @@ struct ContentView: View {
         VStack {
             BookInformationView(book: book, store: store.scope(state: \.bookInfoState, action: \.bookInfoAction))
 
-            AudioPlayerView(store: store.scope(state: \.audioState, action: \.audioAction), url: book.audioSumup)
+            AudioPlayerView(store: store.scope(state: \.audioState, action: \.audioAction), url: book.audioTracks.first)
                 .padding()
 
             TabsView(store: store.scope(state: \.tabsState, action: \.tabAction))

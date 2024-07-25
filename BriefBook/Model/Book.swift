@@ -13,8 +13,7 @@ struct Book {
     let name: String
     let bookImage: String
     let chapters: [String]
-    let keyPoints: [String: TimeInterval]
-    let audioSumup: URL
+    let audioTracks: [URL]
 
     var bookImageReady: KFImage {
         KFImage(URL(string: bookImage))
@@ -32,17 +31,15 @@ struct Book {
                 "Introduction",
                 "Chapter 1: Getting Started",
                 "Chapter 2: Deep Dive",
-                "Chapter 3: Advanced Topics",
                 "Conclusion"
             ],
-            keyPoints: [
-                "Introduction": 0.0,
-                "Chapter 1: Getting Started": 22.4,
-                "Chapter 2: Deep Dive": 44.8,
-                "Chapter 3: Advanced Topics": 67.2,
-                "Conclusion": 89.6
-            ],
-            audioSumup: Bundle.main.url(forResource: "test_audio", withExtension: "mp3")!
+
+            audioTracks: [
+                Bundle.main.url(forResource: "track1", withExtension: "mp3")!,
+                Bundle.main.url(forResource: "track2", withExtension: "mp3")!,
+                Bundle.main.url(forResource: "track3", withExtension: "mp3")!,
+                Bundle.main.url(forResource: "track4", withExtension: "mp3")!,
+            ]
         )
     }
 }
