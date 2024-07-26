@@ -6,18 +6,12 @@
 //
 
 import Foundation
-import SwiftUI
-import Kingfisher
 
 struct Book {
     let name: String
     let bookImage: String
     let chapters: [String]
     let audioTracks: [URL]
-
-    var bookImageReady: KFImage {
-        KFImage(URL(string: bookImage))
-    }
 
     static var mock: Book {
         Book(
@@ -38,7 +32,7 @@ struct Book {
                 Bundle.main.url(forResource: "track1", withExtension: "mp3")!,
                 Bundle.main.url(forResource: "track2", withExtension: "mp3")!,
                 Bundle.main.url(forResource: "track3", withExtension: "mp3")!,
-                Bundle.main.url(forResource: "track4", withExtension: "mp3")!,
+                Bundle.main.url(forResource: "track4", withExtension: "mp3")!
             ]
         )
     }
