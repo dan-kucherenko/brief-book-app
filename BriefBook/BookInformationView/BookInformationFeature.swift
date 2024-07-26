@@ -7,10 +7,10 @@
 
 import SwiftUI
 import ComposableArchitecture
-import Kingfisher
 
 @Reducer
 struct BookInformationFeature {
+
     @ObservableState
     struct State: Equatable {
         var keypoint = 1
@@ -36,6 +36,7 @@ struct BookInformationFeature {
                 state.chapterTitle = book.chapters.first!
                 state.audioTracks = book.audioTracks
                 return .none
+
             case .keyPointMoveForward:
                 if state.keypoint < state.chapters.count {
                     state.keypoint += 1
@@ -44,6 +45,7 @@ struct BookInformationFeature {
                     return .send(.keyPointChanged(newTrack))
                 }
                 return .none
+
             case .keyPointMoveBackward:
                 if state.keypoint > 1 {
                     state.keypoint -= 1
@@ -52,9 +54,11 @@ struct BookInformationFeature {
                     return .send(.keyPointChanged(newTrack))
                 }
                 return .none
+
             case .chapterTitleChanged(let title):
                 state.chapterTitle = title
                 return .none
+
             case .keyPointChanged:
                 return .none
             }
