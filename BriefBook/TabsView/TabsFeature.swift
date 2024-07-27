@@ -5,11 +5,11 @@
 //  Created by Daniil on 20.07.2024.
 //
 
-import Foundation
 import ComposableArchitecture
 
 @Reducer
 struct TabsFeature {
+
     @ObservableState
     struct State: Equatable {
         var selectedTab: SelectedTab = .audio

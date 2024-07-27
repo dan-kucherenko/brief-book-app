@@ -11,50 +11,19 @@ import ComposableArchitecture
 struct TabsView: View {
     let store: StoreOf<TabsFeature>
 
-    private let audioIcon = "headphones"
-    private let textIcon = "text.alignleft"
-    private let tabElementWidth: CGFloat = 40
-    private let tabElementHeight: CGFloat = 40
-    private let iconFontSize: CGFloat = 20
-    private let tabsViewWidth: CGFloat = 100
-
     var body: some View {
         HStack(spacing: 25) {
-            ZStack {
-                if store.selectedTab == .audio {
-                    Circle()
-                        .fill(Color.blue)
-                        .frame(width: tabElementWidth, height: tabElementHeight)
-                        .animation(.easeInOut, value: store.selectedTab)
+            TabElement(tab: .audio, image: "headphones", store: store)
+                .onTapGesture {
+                    store.send(.tabSelected(TabsFeature.State.SelectedTab.audio))
                 }
-                Image(systemName: audioIcon)
-                    .frame(width: tabElementWidth, height: tabElementHeight)
-                    .foregroundColor(store.selectedTab == TabsFeature.State.SelectedTab.audio ? .white : .black)
-                    .font(.system(size: iconFontSize))
-                    .animation(.easeInOut, value: store.selectedTab)
-            }
-            .onTapGesture {
-                store.send(.tabSelected(TabsFeature.State.SelectedTab.audio))
-            }
 
-            ZStack {
-                if store.selectedTab == .text {
-                    Circle()
-                        .fill(Color.blue)
-                        .frame(width: tabElementWidth, height: tabElementHeight)
-                        .animation(.easeInOut, value: store.selectedTab)
+            TabElement(tab: .text, image: "text.alignleft", store: store)
+                .onTapGesture {
+                    store.send(.tabSelected(TabsFeature.State.SelectedTab.text))
                 }
-                Image(systemName: textIcon)
-                    .frame(width: tabElementWidth, height: tabElementHeight)
-                    .foregroundColor(store.selectedTab == TabsFeature.State.SelectedTab.text ? .white : .black)
-                    .font(.system(size: iconFontSize))
-                    .animation(.easeInOut, value: store.selectedTab)
-            }
-            .onTapGesture {
-                store.send(.tabSelected(TabsFeature.State.SelectedTab.text))
-            }
         }
-        .frame(width: 100, height: tabElementHeight)
+        .frame(width: 100, height: 40)
         .padding(5)
         .background(
             RoundedRectangle(cornerRadius: 60)
@@ -65,9 +34,7 @@ struct TabsView: View {
 }
 
 #Preview {
-    TabsView(
-        store: Store(initialState: TabsFeature.State()) {
-            TabsFeature()
-        }
-    )
+    TabsView(store: Store(initialState: TabsFeature.State()) {
+        TabsFeature()
+    })
 }
