@@ -11,19 +11,12 @@ import ComposableArchitecture
 struct AudioPlayerControllers: View {
     let store: StoreOf<AudioPlayerFeature>
 
-    private let playIcon = "play.fill"
-    private let pauseIcon = "pause.fill"
-    private let backwardIcon = "backward.end.fill"
-    private let goBackwardIcon = "gobackward.5"
-    private let goForwardIcon = "goforward.10"
-    private let forwardIcon = "forward.end.fill"
-
     var body: some View {
         HStack(spacing: 20) {
             Button {
                 store.send(.previousTrackTapped)
             } label: {
-                Image(systemName: backwardIcon)
+                Image(systemName: "backward.end.fill")
                     .font(.title)
             }
             .buttonStyle(PlainButtonStyle())
@@ -31,7 +24,7 @@ struct AudioPlayerControllers: View {
             Button {
                 store.send(.rewindTapped)
             } label: {
-                Image(systemName: goBackwardIcon)
+                Image(systemName: "gobackward.5")
                     .font(.title)
             }
             .buttonStyle(PlainButtonStyle())
@@ -39,15 +32,15 @@ struct AudioPlayerControllers: View {
             Button {
                 store.send(.playPauseTapped)
             } label: {
-                Image(systemName: store.isPlaying ? pauseIcon : playIcon)
+                Image(systemName: store.isPlaying ? "pause.fill" : "play.fill")
                     .font(.largeTitle)
             }
-
             .buttonStyle(PlainButtonStyle())
+
             Button {
                 store.send(.forwardTapped)
             } label: {
-                Image(systemName: goForwardIcon)
+                Image(systemName: "goforward.10")
                     .font(.title)
             }
             .buttonStyle(PlainButtonStyle())
@@ -55,7 +48,7 @@ struct AudioPlayerControllers: View {
             Button {
                 store.send(.nextTrackTapped)
             } label: {
-                Image(systemName: forwardIcon)
+                Image(systemName: "forward.end.fill")
                     .font(.title)
             }
             .buttonStyle(PlainButtonStyle())
@@ -64,9 +57,7 @@ struct AudioPlayerControllers: View {
 }
 
 #Preview {
-    AudioPlayerControllers(
-        store: Store(initialState: AudioPlayerFeature.State()) {
-            AudioPlayerFeature()
-        }
-    )
+    AudioPlayerControllers(store: Store(initialState: AudioPlayerFeature.State()) {
+        AudioPlayerFeature()
+    })
 }

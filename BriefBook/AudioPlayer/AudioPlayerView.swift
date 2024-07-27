@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct AudioPlayerView: View {
-    let store: StoreOf<AudioPlayerFeature>
+    @Bindable var store: StoreOf<AudioPlayerFeature>
     var url: URL?
 
     var body: some View {
@@ -23,10 +23,13 @@ struct AudioPlayerView: View {
                     store.send(.timeStampChanged(newValue))
                 }), in: 0...store.totalTime)
                 .tint(.blue)
+
                 Spacer()
+
                 Text("\(formatTime(store.totalTime))")
             }
             .padding(.horizontal)
+
             Button {
                 store.send(.speedChanged)
             } label: {
@@ -39,6 +42,7 @@ struct AudioPlayerView: View {
             .frame(width: 90)
             .background(.gray).opacity(0.2)
             .cornerRadius(8)
+
             AudioPlayerControllers(store: store)
                 .padding(.top, 30)
         }
@@ -51,9 +55,12 @@ struct AudioPlayerView: View {
             store.send(.updateTimeStampProgress)
         }
         .onDisappear {
-            store.player?.stop()
+            store.send(.stopPlayer)
         }
     }
+}
+
+extension AudioPlayerView {
     private func formatTime(_ time: TimeInterval) -> String {
         let seconds = Int(time) % 60
         let minutes = Int(time) / 60
