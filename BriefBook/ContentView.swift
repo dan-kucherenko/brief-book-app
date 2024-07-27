@@ -14,10 +14,13 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            BookInformationView(book: book, store: store.scope(state: \.bookInfoState, action: \.bookInfoAction))
+            BookInformationView(store: store.scope(state: \.bookInfoState, action: \.bookInfoAction))
 
-            AudioPlayerView(store: store.scope(state: \.audioState, action: \.audioAction), url: book.audioTracks.first)
-                .padding()
+            AudioPlayerView(
+                store: store.scope(state: \.audioState, action: \.audioAction),
+                url: book.audioTracks.first!
+            )
+            .padding()
 
             TabsView(store: store.scope(state: \.tabsState, action: \.tabAction))
                 .padding(.top, 40)
@@ -29,9 +32,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(book: .mock,
-                store: Store(
-                    initialState: AppFeature.State()
-                ) { AppFeature() }
-    )
+    ContentView(book: .mock, store: Store(initialState: AppFeature.State()) {
+        AppFeature()
+    })
 }

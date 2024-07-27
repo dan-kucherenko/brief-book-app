@@ -11,8 +11,9 @@ import ComposableArchitecture
 @main
 struct BriefBookApp: App {
     static let store = Store(initialState: AppFeature.State()) {
-      AppFeature()
+        AppFeature()
     }
+
     var body: some Scene {
         WindowGroup {
             ContentView(book: .mock, store: BriefBookApp.store)
