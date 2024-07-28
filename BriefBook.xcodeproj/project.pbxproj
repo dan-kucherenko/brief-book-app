@@ -28,7 +28,6 @@
 		A5E305E12C4DD130004D120A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E305E02C4DD130004D120A /* Book.swift */; };
 		A5E77C962C4FB28100333DB0 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E77C952C4FB28100333DB0 /* AppFeature.swift */; };
 		A5E77C982C4FBCC500333DB0 /* BookInformationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E77C972C4FBCC500333DB0 /* BookInformationFeature.swift */; };
-		A5E77C9B2C50217200333DB0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A5E77C9A2C50217200333DB0 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E77C9B2C50217200333DB0 /* Kingfisher in Frameworks */,
 				A5A6D1FD2C46E02500FC1EAB /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +203,6 @@
 			name = BriefBook;
 			packageProductDependencies = (
 				A5A6D1FC2C46E02500FC1EAB /* ComposableArchitecture */,
-				A5E77C9A2C50217200333DB0 /* Kingfisher */,
 			);
 			productName = BriefBook;
 			productReference = A5A6D1CE2C46D27E00FC1EAB /* BriefBook.app */;
@@ -647,11 +644,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5A6D1FB2C46E02500FC1EAB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		A5E77C9A2C50217200333DB0 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A5E77C992C50217200333DB0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
