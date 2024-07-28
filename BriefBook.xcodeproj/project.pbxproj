@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5467E5F2C49B819004F0EA9 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */; };
+		A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */; };
+		A5467E672C4A86B4004F0EA9 /* AudioPlayerControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */; };
+		A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6B2C4C2718004F0EA9 /* TabsView.swift */; };
+		A5467E6E2C4C4D98004F0EA9 /* TabsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */; };
+		A568B52B2C51A9F600092AB2 /* track2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5272C51A9F600092AB2 /* track2.mp3 */; };
+		A568B52C2C51A9F600092AB2 /* track4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5282C51A9F600092AB2 /* track4.mp3 */; };
+		A568B52D2C51A9F600092AB2 /* track3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5292C51A9F600092AB2 /* track3.mp3 */; };
+		A568B52E2C51A9F600092AB2 /* track1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B52A2C51A9F600092AB2 /* track1.mp3 */; };
+		A579E2FF2C56780B0074EFD5 /* TabsFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579E2FE2C56780B0074EFD5 /* TabsFeatureTests.swift */; };
+		A598235A2C55B7A000201796 /* BookInformationFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59823592C55B7A000201796 /* BookInformationFeatureTests.swift */; };
 		A5A6D1D22C46D27E00FC1EAB /* BriefBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6D1D12C46D27E00FC1EAB /* BriefBookApp.swift */; };
 		A5A6D1D42C46D27E00FC1EAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6D1D32C46D27E00FC1EAB /* ContentView.swift */; };
 		A5A6D1D62C46D27F00FC1EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A6D1D52C46D27F00FC1EAB /* Assets.xcassets */; };
-		A5A6D1D92C46D27F00FC1EAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A6D1D82C46D27F00FC1EAB /* Preview Assets.xcassets */; };
-		A5A6D1E32C46D27F00FC1EAB /* BriefBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6D1E22C46D27F00FC1EAB /* BriefBookTests.swift */; };
-		A5A6D1ED2C46D27F00FC1EAB /* BriefBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6D1EC2C46D27F00FC1EAB /* BriefBookUITests.swift */; };
-		A5A6D1EF2C46D27F00FC1EAB /* BriefBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6D1EE2C46D27F00FC1EAB /* BriefBookUITestsLaunchTests.swift */; };
+		A5A6D1FD2C46E02500FC1EAB /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A5A6D1FC2C46E02500FC1EAB /* ComposableArchitecture */; };
+		A5D581FD2C53BE8000E3218D /* AudioPlayerFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D581FC2C53BE8000E3218D /* AudioPlayerFeatureTests.swift */; };
+		A5D582062C54742300E3218D /* TabElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D582052C54742300E3218D /* TabElement.swift */; };
+		A5E305DE2C4DD00E004D120A /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E305DD2C4DD00E004D120A /* BookInformationView.swift */; };
+		A5E305E12C4DD130004D120A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E305E02C4DD130004D120A /* Book.swift */; };
+		A5E77C962C4FB28100333DB0 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E77C952C4FB28100333DB0 /* AppFeature.swift */; };
+		A5E77C982C4FBCC500333DB0 /* BookInformationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E77C972C4FBCC500333DB0 /* BookInformationFeature.swift */; };
+		A5E77C9B2C50217200333DB0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A5E77C9A2C50217200333DB0 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,26 +39,31 @@
 			remoteGlobalIDString = A5A6D1CD2C46D27E00FC1EAB;
 			remoteInfo = BriefBook;
 		};
-		A5A6D1E92C46D27F00FC1EAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5A6D1C62C46D27E00FC1EAB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A5A6D1CD2C46D27E00FC1EAB;
-			remoteInfo = BriefBook;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFeature.swift; sourceTree = "<group>"; };
+		A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerControllers.swift; sourceTree = "<group>"; };
+		A5467E6B2C4C2718004F0EA9 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsFeature.swift; sourceTree = "<group>"; };
+		A568B5272C51A9F600092AB2 /* track2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track2.mp3; sourceTree = "<group>"; };
+		A568B5282C51A9F600092AB2 /* track4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track4.mp3; sourceTree = "<group>"; };
+		A568B5292C51A9F600092AB2 /* track3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track3.mp3; sourceTree = "<group>"; };
+		A568B52A2C51A9F600092AB2 /* track1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track1.mp3; sourceTree = "<group>"; };
+		A579E2FE2C56780B0074EFD5 /* TabsFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsFeatureTests.swift; sourceTree = "<group>"; };
+		A59823592C55B7A000201796 /* BookInformationFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationFeatureTests.swift; sourceTree = "<group>"; };
 		A5A6D1CE2C46D27E00FC1EAB /* BriefBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BriefBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A6D1D12C46D27E00FC1EAB /* BriefBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefBookApp.swift; sourceTree = "<group>"; };
 		A5A6D1D32C46D27E00FC1EAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5A6D1D52C46D27F00FC1EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A5A6D1D82C46D27F00FC1EAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A5A6D1DE2C46D27F00FC1EAB /* BriefBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BriefBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A6D1E22C46D27F00FC1EAB /* BriefBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefBookTests.swift; sourceTree = "<group>"; };
-		A5A6D1E82C46D27F00FC1EAB /* BriefBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BriefBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A6D1EC2C46D27F00FC1EAB /* BriefBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefBookUITests.swift; sourceTree = "<group>"; };
-		A5A6D1EE2C46D27F00FC1EAB /* BriefBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A5D581FC2C53BE8000E3218D /* AudioPlayerFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFeatureTests.swift; sourceTree = "<group>"; };
+		A5D582052C54742300E3218D /* TabElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabElement.swift; sourceTree = "<group>"; };
+		A5E305DD2C4DD00E004D120A /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
+		A5E305E02C4DD130004D120A /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A5E77C952C4FB28100333DB0 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		A5E77C972C4FBCC500333DB0 /* BookInformationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E77C9B2C50217200333DB0 /* Kingfisher in Frameworks */,
+				A5A6D1FD2C46E02500FC1EAB /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,22 +83,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5A6D1E52C46D27F00FC1EAB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5467E642C4A853D004F0EA9 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A5467E652C4A86A1004F0EA9 /* AudioControllers */,
+				A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */,
+				A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		A5467E652C4A86A1004F0EA9 /* AudioControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */,
+			);
+			path = AudioControllers;
+			sourceTree = "<group>";
+		};
+		A5467E6A2C4C2610004F0EA9 /* TabsView */ = {
+			isa = PBXGroup;
+			children = (
+				A5D582052C54742300E3218D /* TabElement.swift */,
+				A5467E6B2C4C2718004F0EA9 /* TabsView.swift */,
+				A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */,
+			);
+			path = TabsView;
+			sourceTree = "<group>";
+		};
+		A568B5262C51A92700092AB2 /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				A568B52A2C51A9F600092AB2 /* track1.mp3 */,
+				A568B5272C51A9F600092AB2 /* track2.mp3 */,
+				A568B5292C51A9F600092AB2 /* track3.mp3 */,
+				A568B5282C51A9F600092AB2 /* track4.mp3 */,
+			);
+			path = Tracks;
+			sourceTree = "<group>";
+		};
 		A5A6D1C52C46D27E00FC1EAB = {
 			isa = PBXGroup;
 			children = (
 				A5A6D1D02C46D27E00FC1EAB /* BriefBook */,
 				A5A6D1E12C46D27F00FC1EAB /* BriefBookTests */,
-				A5A6D1EB2C46D27F00FC1EAB /* BriefBookUITests */,
 				A5A6D1CF2C46D27E00FC1EAB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +139,6 @@
 			children = (
 				A5A6D1CE2C46D27E00FC1EAB /* BriefBook.app */,
 				A5A6D1DE2C46D27F00FC1EAB /* BriefBookTests.xctest */,
-				A5A6D1E82C46D27F00FC1EAB /* BriefBookUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,37 +146,44 @@
 		A5A6D1D02C46D27E00FC1EAB /* BriefBook */ = {
 			isa = PBXGroup;
 			children = (
+				A568B5262C51A92700092AB2 /* Tracks */,
+				A5E305DF2C4DD128004D120A /* Model */,
+				A5E305DC2C4DCFBE004D120A /* BookInformationView */,
+				A5467E642C4A853D004F0EA9 /* AudioPlayer */,
+				A5467E6A2C4C2610004F0EA9 /* TabsView */,
 				A5A6D1D12C46D27E00FC1EAB /* BriefBookApp.swift */,
+				A5E77C952C4FB28100333DB0 /* AppFeature.swift */,
 				A5A6D1D32C46D27E00FC1EAB /* ContentView.swift */,
 				A5A6D1D52C46D27F00FC1EAB /* Assets.xcassets */,
-				A5A6D1D72C46D27F00FC1EAB /* Preview Content */,
 			);
 			path = BriefBook;
-			sourceTree = "<group>";
-		};
-		A5A6D1D72C46D27F00FC1EAB /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A5A6D1D82C46D27F00FC1EAB /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		A5A6D1E12C46D27F00FC1EAB /* BriefBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5A6D1E22C46D27F00FC1EAB /* BriefBookTests.swift */,
+				A5D581FC2C53BE8000E3218D /* AudioPlayerFeatureTests.swift */,
+				A59823592C55B7A000201796 /* BookInformationFeatureTests.swift */,
+				A579E2FE2C56780B0074EFD5 /* TabsFeatureTests.swift */,
 			);
 			path = BriefBookTests;
 			sourceTree = "<group>";
 		};
-		A5A6D1EB2C46D27F00FC1EAB /* BriefBookUITests */ = {
+		A5E305DC2C4DCFBE004D120A /* BookInformationView */ = {
 			isa = PBXGroup;
 			children = (
-				A5A6D1EC2C46D27F00FC1EAB /* BriefBookUITests.swift */,
-				A5A6D1EE2C46D27F00FC1EAB /* BriefBookUITestsLaunchTests.swift */,
+				A5E305DD2C4DD00E004D120A /* BookInformationView.swift */,
+				A5E77C972C4FBCC500333DB0 /* BookInformationFeature.swift */,
 			);
-			path = BriefBookUITests;
+			path = BookInformationView;
+			sourceTree = "<group>";
+		};
+		A5E305DF2C4DD128004D120A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5E305E02C4DD130004D120A /* Book.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,12 +196,17 @@
 				A5A6D1CA2C46D27E00FC1EAB /* Sources */,
 				A5A6D1CB2C46D27E00FC1EAB /* Frameworks */,
 				A5A6D1CC2C46D27E00FC1EAB /* Resources */,
+				A5E77C9D2C5129D500333DB0 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BriefBook;
+			packageProductDependencies = (
+				A5A6D1FC2C46E02500FC1EAB /* ComposableArchitecture */,
+				A5E77C9A2C50217200333DB0 /* Kingfisher */,
+			);
 			productName = BriefBook;
 			productReference = A5A6D1CE2C46D27E00FC1EAB /* BriefBook.app */;
 			productType = "com.apple.product-type.application";
@@ -165,24 +229,6 @@
 			productReference = A5A6D1DE2C46D27F00FC1EAB /* BriefBookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A5A6D1E72C46D27F00FC1EAB /* BriefBookUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5A6D1F82C46D27F00FC1EAB /* Build configuration list for PBXNativeTarget "BriefBookUITests" */;
-			buildPhases = (
-				A5A6D1E42C46D27F00FC1EAB /* Sources */,
-				A5A6D1E52C46D27F00FC1EAB /* Frameworks */,
-				A5A6D1E62C46D27F00FC1EAB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A5A6D1EA2C46D27F00FC1EAB /* PBXTargetDependency */,
-			);
-			name = BriefBookUITests;
-			productName = BriefBookUITests;
-			productReference = A5A6D1E82C46D27F00FC1EAB /* BriefBookUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +246,6 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = A5A6D1CD2C46D27E00FC1EAB;
 					};
-					A5A6D1E72C46D27F00FC1EAB = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = A5A6D1CD2C46D27E00FC1EAB;
-					};
 				};
 			};
 			buildConfigurationList = A5A6D1C92C46D27E00FC1EAB /* Build configuration list for PBXProject "BriefBook" */;
@@ -215,13 +257,16 @@
 				Base,
 			);
 			mainGroup = A5A6D1C52C46D27E00FC1EAB;
+			packageReferences = (
+				A5A6D1FB2C46E02500FC1EAB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				A5E77C992C50217200333DB0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A5A6D1CF2C46D27E00FC1EAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A5A6D1CD2C46D27E00FC1EAB /* BriefBook */,
 				A5A6D1DD2C46D27F00FC1EAB /* BriefBookTests */,
-				A5A6D1E72C46D27F00FC1EAB /* BriefBookUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,7 +276,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A6D1D92C46D27F00FC1EAB /* Preview Assets.xcassets in Resources */,
+				A568B52C2C51A9F600092AB2 /* track4.mp3 in Resources */,
+				A568B52E2C51A9F600092AB2 /* track1.mp3 in Resources */,
+				A568B52B2C51A9F600092AB2 /* track2.mp3 in Resources */,
+				A568B52D2C51A9F600092AB2 /* track3.mp3 in Resources */,
 				A5A6D1D62C46D27F00FC1EAB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,21 +291,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5A6D1E62C46D27F00FC1EAB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A5E77C9D2C5129D500333DB0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5A6D1CA2C46D27E00FC1EAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E77C982C4FBCC500333DB0 /* BookInformationFeature.swift in Sources */,
+				A5467E5F2C49B819004F0EA9 /* AudioPlayerView.swift in Sources */,
+				A5467E6E2C4C4D98004F0EA9 /* TabsFeature.swift in Sources */,
+				A5E77C962C4FB28100333DB0 /* AppFeature.swift in Sources */,
+				A5E305DE2C4DD00E004D120A /* BookInformationView.swift in Sources */,
 				A5A6D1D42C46D27E00FC1EAB /* ContentView.swift in Sources */,
+				A5D582062C54742300E3218D /* TabElement.swift in Sources */,
+				A5467E672C4A86B4004F0EA9 /* AudioPlayerControllers.swift in Sources */,
+				A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */,
+				A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */,
+				A5E305E12C4DD130004D120A /* Book.swift in Sources */,
 				A5A6D1D22C46D27E00FC1EAB /* BriefBookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,16 +339,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A6D1E32C46D27F00FC1EAB /* BriefBookTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5A6D1E42C46D27F00FC1EAB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5A6D1EF2C46D27F00FC1EAB /* BriefBookUITestsLaunchTests.swift in Sources */,
-				A5A6D1ED2C46D27F00FC1EAB /* BriefBookUITests.swift in Sources */,
+				A598235A2C55B7A000201796 /* BookInformationFeatureTests.swift in Sources */,
+				A5D581FD2C53BE8000E3218D /* AudioPlayerFeatureTests.swift in Sources */,
+				A579E2FF2C56780B0074EFD5 /* TabsFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +352,6 @@
 			isa = PBXTargetDependency;
 			target = A5A6D1CD2C46D27E00FC1EAB /* BriefBook */;
 			targetProxy = A5A6D1DF2C46D27F00FC1EAB /* PBXContainerItemProxy */;
-		};
-		A5A6D1EA2C46D27F00FC1EAB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A5A6D1CD2C46D27E00FC1EAB /* BriefBook */;
-			targetProxy = A5A6D1E92C46D27F00FC1EAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -421,9 +482,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BriefBook/Preview Content\"";
 				DEVELOPMENT_TEAM = 24TT693G4C;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -443,7 +504,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,9 +515,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BriefBook/Preview Content\"";
 				DEVELOPMENT_TEAM = 24TT693G4C;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -476,7 +537,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -493,9 +554,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BriefBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BriefBook";
 			};
 			name = Debug;
@@ -513,46 +578,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BriefBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BriefBook";
-			};
-			name = Release;
-		};
-		A5A6D1F92C46D27F00FC1EAB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24TT693G4C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBookUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BriefBook;
-			};
-			name = Debug;
-		};
-		A5A6D1FA2C46D27F00FC1EAB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24TT693G4C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBookUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BriefBook;
 			};
 			name = Release;
 		};
@@ -586,16 +619,39 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5A6D1F82C46D27F00FC1EAB /* Build configuration list for PBXNativeTarget "BriefBookUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5A6D1F92C46D27F00FC1EAB /* Debug */,
-				A5A6D1FA2C46D27F00FC1EAB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A5A6D1FB2C46E02500FC1EAB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.2;
+			};
+		};
+		A5E77C992C50217200333DB0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A5A6D1FC2C46E02500FC1EAB /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5A6D1FB2C46E02500FC1EAB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		A5E77C9A2C50217200333DB0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5E77C992C50217200333DB0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A5A6D1C62C46D27E00FC1EAB /* Project object */;
 }
