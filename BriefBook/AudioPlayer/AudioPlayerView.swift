@@ -10,6 +10,7 @@ import ComposableArchitecture
 
 struct AudioPlayerView: View {
     @Bindable var store: StoreOf<AudioPlayerFeature>
+    @Environment(\.colorScheme) var colorScheme
     var url: URL?
 
     var body: some View {
@@ -35,7 +36,7 @@ struct AudioPlayerView: View {
             } label: {
                 Text("Speed x\(store.speed.formatted)")
                     .bold()
-                    .foregroundStyle(.black)
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
                     .font(.system(size: 14))
                     .padding(7)
             }

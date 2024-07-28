@@ -25,6 +25,7 @@ struct ContentView: View {
             TabsView(store: store.scope(state: \.tabsState, action: \.tabAction))
                 .padding(.top, 40)
         }
+        .padding()
         .onAppear {
             store.send(.bookInfoAction(.setInitialValues(book: book)))
         }

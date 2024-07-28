@@ -16,7 +16,7 @@ struct BookInformationView: View {
             Image(.bookPhotoPlaceholder)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 240)
+                .frame(maxWidth: 240)
 
             Text("KEY POINT \(store.keypoint) OF \(store.chapters.count)")
                 .font(.subheadline)
