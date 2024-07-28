@@ -28,7 +28,7 @@ struct TabElement: View {
             Image(systemName: image)
                 .frame(width: tabElementWidth, height: tabElementHeight)
                 .font(.system(size: iconFontSize))
-                .foregroundColor(store.selectedTab == tab ? .white : .black)
+                .foregroundColor(store.selectedTab == tab ? .white : .primary)
         }
     }
 }
