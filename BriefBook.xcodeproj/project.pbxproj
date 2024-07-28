@@ -28,7 +28,6 @@
 		A5E305E12C4DD130004D120A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E305E02C4DD130004D120A /* Book.swift */; };
 		A5E77C962C4FB28100333DB0 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E77C952C4FB28100333DB0 /* AppFeature.swift */; };
 		A5E77C982C4FBCC500333DB0 /* BookInformationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E77C972C4FBCC500333DB0 /* BookInformationFeature.swift */; };
-		A5E77C9B2C50217200333DB0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A5E77C9A2C50217200333DB0 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E77C9B2C50217200333DB0 /* Kingfisher in Frameworks */,
 				A5A6D1FD2C46E02500FC1EAB /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +203,6 @@
 			name = BriefBook;
 			packageProductDependencies = (
 				A5A6D1FC2C46E02500FC1EAB /* ComposableArchitecture */,
-				A5E77C9A2C50217200333DB0 /* Kingfisher */,
 			);
 			productName = BriefBook;
 			productReference = A5A6D1CE2C46D27E00FC1EAB /* BriefBook.app */;
@@ -259,7 +256,6 @@
 			mainGroup = A5A6D1C52C46D27E00FC1EAB;
 			packageReferences = (
 				A5A6D1FB2C46E02500FC1EAB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				A5E77C992C50217200333DB0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A5A6D1CF2C46D27E00FC1EAB /* Products */;
 			projectDirPath = "";
@@ -408,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -465,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -491,6 +487,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,6 +521,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,7 +548,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24TT693G4C;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -574,7 +572,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24TT693G4C;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -630,14 +628,6 @@
 				minimumVersion = 1.11.2;
 			};
 		};
-		A5E77C992C50217200333DB0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.12.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -645,11 +635,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5A6D1FB2C46E02500FC1EAB /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		A5E77C9A2C50217200333DB0 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A5E77C992C50217200333DB0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

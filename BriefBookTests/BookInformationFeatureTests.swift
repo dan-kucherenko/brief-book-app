@@ -27,13 +27,14 @@ final class BookInformationFeatureTests: XCTestCase {
     }
 
     func testKeyPointMoveForward() async {
-        var initialState = BookInformationFeature.State()
-        initialState.chapters = Book.mock.chapters
-        initialState.audioTracks = Book.mock.audioTracks
-
         let store = TestStore(
-            initialState: initialState,
-            reducer: { BookInformationFeature() }
+            initialState: BookInformationFeature.State(
+                chapters: Book.mock.chapters,
+                audioTracks: Book.mock.audioTracks
+            ),
+            reducer: {
+                BookInformationFeature()
+            }
         )
 
         await store.send(.keyPointMoveForward) {
@@ -45,14 +46,15 @@ final class BookInformationFeatureTests: XCTestCase {
     }
 
     func testKeyPointMoveBackward() async {
-        var initialState = BookInformationFeature.State()
-        initialState.keypoint = 2
-        initialState.chapters = Book.mock.chapters
-        initialState.audioTracks = Book.mock.audioTracks
-
         let store = TestStore(
-            initialState: initialState,
-            reducer: { BookInformationFeature() }
+            initialState: BookInformationFeature.State(
+                keypoint: 2,
+                chapters: Book.mock.chapters,
+                audioTracks: Book.mock.audioTracks
+            ),
+            reducer: {
+                BookInformationFeature()
+            }
         )
 
         await store.send(.keyPointMoveBackward) {

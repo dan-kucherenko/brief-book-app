@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 import XCTest
-import AVFAudio 
+import AVFAudio
 
 @testable import BriefBook
 
@@ -40,7 +40,7 @@ final class AudioPlayerFeatureTests: XCTestCase {
             initialState: AudioPlayerFeature.State(),
             reducer: { AudioPlayerFeature() }
         )
-        
+
         await store.send(.speedChanged) {
             $0.speed = .fast
         }
@@ -59,7 +59,7 @@ final class AudioPlayerFeatureTests: XCTestCase {
             initialState: AudioPlayerFeature.State(),
             reducer: { AudioPlayerFeature() }
         )
-        
+
         await store.send(.playPauseTapped) {
             $0.isPlaying = true
         }
@@ -75,12 +75,8 @@ final class AudioPlayerFeatureTests: XCTestCase {
             Bundle.main.url(forResource: "track2", withExtension: "mp3")!
         ]
 
-        var initialState = AudioPlayerFeature.State()
-        initialState.currentTrackIndex = 1
-        initialState.tracks = trackURLs
-
         let store = TestStore(
-            initialState: initialState,
+            initialState: AudioPlayerFeature.State(tracks: trackURLs, currentTrackIndex: 1),
             reducer: { AudioPlayerFeature() }
         )
         store.exhaustivity = .off
@@ -136,12 +132,8 @@ final class AudioPlayerFeatureTests: XCTestCase {
             Bundle.main.url(forResource: "track2", withExtension: "mp3")!
         ]
 
-        var initialState = AudioPlayerFeature.State(isPlaying: true)
-        initialState.currentTrackIndex = 0
-        initialState.tracks = trackURLs
-
         let store = TestStore(
-            initialState: initialState,
+            initialState: AudioPlayerFeature.State(tracks: trackURLs, currentTrackIndex: 0),
             reducer: { AudioPlayerFeature() }
         )
         store.exhaustivity = .off
