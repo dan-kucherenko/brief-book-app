@@ -16,6 +16,7 @@
 		A54C47552C5C146A004B117F /* AudioPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47542C5C146A004B117F /* AudioPlayable.swift */; };
 		A54C47572C5C214E004B117F /* AudioPlayerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47562C5C214E004B117F /* AudioPlayerMock.swift */; };
 		A54C475B2C5C276F004B117F /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47582C5C222D004B117F /* AudioPlayerTests.swift */; };
+		A54C475F2C5C3A52004B117F /* AudioPlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C475E2C5C3A52004B117F /* AudioPlayerButton.swift */; };
 		A568B52B2C51A9F600092AB2 /* track2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5272C51A9F600092AB2 /* track2.mp3 */; };
 		A568B52C2C51A9F600092AB2 /* track4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5282C51A9F600092AB2 /* track4.mp3 */; };
 		A568B52D2C51A9F600092AB2 /* track3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5292C51A9F600092AB2 /* track3.mp3 */; };
@@ -54,6 +55,7 @@
 		A54C47542C5C146A004B117F /* AudioPlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayable.swift; sourceTree = "<group>"; };
 		A54C47562C5C214E004B117F /* AudioPlayerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerMock.swift; sourceTree = "<group>"; };
 		A54C47582C5C222D004B117F /* AudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
+		A54C475E2C5C3A52004B117F /* AudioPlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerButton.swift; sourceTree = "<group>"; };
 		A568B5272C51A9F600092AB2 /* track2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track2.mp3; sourceTree = "<group>"; };
 		A568B5282C51A9F600092AB2 /* track4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track4.mp3; sourceTree = "<group>"; };
 		A568B5292C51A9F600092AB2 /* track3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track3.mp3; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				A5467E662C4A86B4004F0EA9 /* AudioPlayerComponents.swift */,
 				A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */,
 				A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */,
+				A54C475E2C5C3A52004B117F /* AudioPlayerButton.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				A5E305E12C4DD130004D120A /* Book.swift in Sources */,
 				A54C47532C5BD441004B117F /* AudioPlayer.swift in Sources */,
 				A5A6D1D22C46D27E00FC1EAB /* BriefBookApp.swift in Sources */,
+				A54C475F2C5C3A52004B117F /* AudioPlayerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

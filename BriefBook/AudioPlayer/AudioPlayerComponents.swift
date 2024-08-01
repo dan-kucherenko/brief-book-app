@@ -12,7 +12,7 @@ struct AudioPlayerControllers: View {
     let store: StoreOf<AudioPlayerFeature>
 
     var body: some View {
-        HStack(spacing: 25) {
+        HStack(spacing: 10) {
             backwardBtnView
             rewindBtnView
             playPauseBtnView
@@ -24,53 +24,34 @@ struct AudioPlayerControllers: View {
 
 extension AudioPlayerControllers {
     private var backwardBtnView: some View {
-        Button {
+        AudioPlayerButton(imageName: "backward.end.fill", size: .title2) {
             store.send(.previousTrackTapped)
-        } label: {
-            Image(systemName: "backward.end.fill")
-                .font(.title)
         }
-        .buttonStyle(PlainButtonStyle())
     }
 
     private var rewindBtnView: some View {
-        Button {
+        AudioPlayerButton(imageName: "gobackward.5", size: .title) {
             store.send(.rewindTapped)
-        } label: {
-            Image(systemName: "gobackward.5")
-                .font(.title)
         }
-        .buttonStyle(PlainButtonStyle())
     }
 
     private var playPauseBtnView: some View {
-        Button {
+        AudioPlayerButton(imageName: store.isPlaying ? "pause.fill" : "play.fill",
+                          size: .largeTitle) {
             store.send(.playPauseTapped)
-        } label: {
-            Image(systemName: store.isPlaying ? "pause.fill" : "play.fill")
-                .font(.largeTitle)
         }
-        .buttonStyle(PlainButtonStyle())
     }
 
     private var forwardBtnView: some View {
-        Button {
+        AudioPlayerButton(imageName: "goforward.10", size: .title) {
             store.send(.forwardTapped)
-        } label: {
-            Image(systemName: "goforward.10")
-                .font(.title)
         }
-        .buttonStyle(PlainButtonStyle())
     }
 
     private var nextTrackBtnView: some View {
-        Button {
+        AudioPlayerButton(imageName: "forward.end.fill", size: .title2) {
             store.send(.nextTrackTapped)
-        } label: {
-            Image(systemName: "forward.end.fill")
-                .font(.title)
         }
-        .buttonStyle(PlainButtonStyle())
     }
 }
 
