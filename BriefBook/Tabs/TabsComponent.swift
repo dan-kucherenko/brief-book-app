@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct TabElement: View {
+struct TabItem: View {
     let tab: TabsFeature.State.SelectedTab
     let image: String
     let store: StoreOf<TabsFeature>
@@ -23,7 +23,7 @@ struct TabElement: View {
     }
 }
 
-extension TabElement {
+extension TabItem {
     private var circleFill: some View {
         Circle()
             .fill(Color.blue)
@@ -39,7 +39,7 @@ extension TabElement {
 }
 
 #Preview {
-    TabElement(tab: .text, image: "headphones", store: Store(initialState: TabsFeature.State()) {
+    TabItem(tab: .text, image: "headphones", store: Store(initialState: TabsFeature.State()) {
         TabsFeature()
     })
 }

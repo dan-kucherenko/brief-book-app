@@ -28,14 +28,14 @@ struct TabsView: View {
 
 extension TabsView {
     private var headphonesBtnView: some View {
-        TabElement(tab: .audio, image: "headphones", store: store)
+        TabItem(tab: .audio, image: "headphones", store: store)
             .onTapGesture {
                 store.send(.tabSelected(TabsFeature.State.SelectedTab.audio))
             }
     }
 
     private var textBtnView: some View {
-        TabElement(tab: .text, image: "text.alignleft", store: store)
+        TabItem(tab: .text, image: "text.alignleft", store: store)
             .onTapGesture {
                 store.send(.tabSelected(TabsFeature.State.SelectedTab.text))
             }

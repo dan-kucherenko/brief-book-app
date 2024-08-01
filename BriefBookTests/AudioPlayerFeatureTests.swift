@@ -73,7 +73,7 @@ final class AudioPlayerFeatureTests: XCTestCase {
         let trackURL = Bundle.main.url(forResource: "track1", withExtension: "mp3")!
         let expectedCurrentTime: TimeInterval = 5
         let audioPlayer = AudioPlayerTests()
-        
+
         let store = TestStore(
             initialState: AudioPlayerFeature.State(),
             reducer: { AudioPlayerFeature(audioPlayer: audioPlayer) }
