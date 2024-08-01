@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A5467E5F2C49B819004F0EA9 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */; };
 		A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */; };
-		A5467E672C4A86B4004F0EA9 /* AudioPlayerControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */; };
+		A5467E672C4A86B4004F0EA9 /* AudioPlayerControllersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E662C4A86B4004F0EA9 /* AudioPlayerControllersView.swift */; };
 		A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6B2C4C2718004F0EA9 /* TabsView.swift */; };
 		A5467E6E2C4C4D98004F0EA9 /* TabsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */; };
 		A568B52B2C51A9F600092AB2 /* track2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5272C51A9F600092AB2 /* track2.mp3 */; };
@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFeature.swift; sourceTree = "<group>"; };
-		A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerControllers.swift; sourceTree = "<group>"; };
+		A5467E662C4A86B4004F0EA9 /* AudioPlayerControllersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerControllersView.swift; sourceTree = "<group>"; };
 		A5467E6B2C4C2718004F0EA9 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsFeature.swift; sourceTree = "<group>"; };
 		A568B5272C51A9F600092AB2 /* track2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track2.mp3; sourceTree = "<group>"; };
@@ -87,29 +87,29 @@
 		A5467E642C4A853D004F0EA9 /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				A5467E652C4A86A1004F0EA9 /* AudioControllers */,
+				A5467E652C4A86A1004F0EA9 /* AudioPlayerControllersView */,
 				A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */,
 				A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
 		};
-		A5467E652C4A86A1004F0EA9 /* AudioControllers */ = {
+		A5467E652C4A86A1004F0EA9 /* AudioPlayerControllersView */ = {
 			isa = PBXGroup;
 			children = (
-				A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */,
+				A5467E662C4A86B4004F0EA9 /* AudioPlayerControllersView.swift */,
 			);
-			path = AudioControllers;
+			path = AudioPlayerControllersView;
 			sourceTree = "<group>";
 		};
-		A5467E6A2C4C2610004F0EA9 /* TabsView */ = {
+		A5467E6A2C4C2610004F0EA9 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
 				A5D582052C54742300E3218D /* TabElement.swift */,
 				A5467E6B2C4C2718004F0EA9 /* TabsView.swift */,
 				A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */,
 			);
-			path = TabsView;
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		A568B5262C51A92700092AB2 /* Tracks */ = {
@@ -146,9 +146,9 @@
 			children = (
 				A568B5262C51A92700092AB2 /* Tracks */,
 				A5E305DF2C4DD128004D120A /* Model */,
-				A5E305DC2C4DCFBE004D120A /* BookInformationView */,
+				A5E305DC2C4DCFBE004D120A /* BookInformation */,
 				A5467E642C4A853D004F0EA9 /* AudioPlayer */,
-				A5467E6A2C4C2610004F0EA9 /* TabsView */,
+				A5467E6A2C4C2610004F0EA9 /* Tabs */,
 				A5A6D1D12C46D27E00FC1EAB /* BriefBookApp.swift */,
 				A5E77C952C4FB28100333DB0 /* AppFeature.swift */,
 				A5A6D1D32C46D27E00FC1EAB /* ContentView.swift */,
@@ -167,13 +167,13 @@
 			path = BriefBookTests;
 			sourceTree = "<group>";
 		};
-		A5E305DC2C4DCFBE004D120A /* BookInformationView */ = {
+		A5E305DC2C4DCFBE004D120A /* BookInformation */ = {
 			isa = PBXGroup;
 			children = (
 				A5E305DD2C4DD00E004D120A /* BookInformationView.swift */,
 				A5E77C972C4FBCC500333DB0 /* BookInformationFeature.swift */,
 			);
-			path = BookInformationView;
+			path = BookInformation;
 			sourceTree = "<group>";
 		};
 		A5E305DF2C4DD128004D120A /* Model */ = {
@@ -323,7 +323,7 @@
 				A5E305DE2C4DD00E004D120A /* BookInformationView.swift in Sources */,
 				A5A6D1D42C46D27E00FC1EAB /* ContentView.swift in Sources */,
 				A5D582062C54742300E3218D /* TabElement.swift in Sources */,
-				A5467E672C4A86B4004F0EA9 /* AudioPlayerControllers.swift in Sources */,
+				A5467E672C4A86B4004F0EA9 /* AudioPlayerControllersView.swift in Sources */,
 				A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */,
 				A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */,
 				A5E305E12C4DD130004D120A /* Book.swift in Sources */,
