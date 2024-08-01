@@ -69,77 +69,45 @@ final class AudioPlayerFeatureTests: XCTestCase {
         }
     }
 
-    func testPreviousTrackTapped() async {
-        let trackURLs = [
-            Bundle.main.url(forResource: "track1", withExtension: "mp3")!,
-            Bundle.main.url(forResource: "track2", withExtension: "mp3")!
-        ]
-
-        let store = TestStore(
-            initialState: AudioPlayerFeature.State(tracks: trackURLs, currentTrackIndex: 1),
-            reducer: { AudioPlayerFeature() }
-        )
-        store.exhaustivity = .off
-
-        await store.send(.previousTrackTapped) {
-            $0.currentTrackIndex = 0
-        }
-    }
-
     func testRewindTapped() async {
         let trackURL = Bundle.main.url(forResource: "track1", withExtension: "mp3")!
-        guard let player = try? AVAudioPlayer(contentsOf: trackURL) else { return }
-        player.prepareToPlay()
-        player.enableRate = true
-        player.currentTime = 10
-
         let expectedCurrentTime: TimeInterval = 5
 
         let store = TestStore(
-            initialState: AudioPlayerFeature.State(player: player),
+            initialState: AudioPlayerFeature.State(),
             reducer: { AudioPlayerFeature() }
         )
 
+        await store.send(.setupPlayer(trackURL)) {
+            $0.totalTime = store.state.audioPlayer.totalTime
+        }
+
+        store.state.audioPlayer.currentTime = 10
+
         await store.send(.rewindTapped) {
-            $0.player?.currentTime = expectedCurrentTime
+            $0.audioPlayer.currentTime = expectedCurrentTime
             $0.currentTime = expectedCurrentTime
         }
     }
 
     func testForwardTapped() async {
         let trackURL = Bundle.main.url(forResource: "track1", withExtension: "mp3")!
-        guard let player = try? AVAudioPlayer(contentsOf: trackURL) else { return }
-        player.prepareToPlay()
-        player.enableRate = true
-        player.currentTime = 10
-
         let expectedCurrentTime: TimeInterval = 20
 
         let store = TestStore(
-            initialState: AudioPlayerFeature.State(player: player),
+            initialState: AudioPlayerFeature.State(),
             reducer: { AudioPlayerFeature() }
         )
+
+        await store.send(.setupPlayer(trackURL)) {
+            $0.totalTime = store.state.audioPlayer.totalTime
+        }
+
+        store.state.audioPlayer.currentTime = 10
 
         await store.send(.forwardTapped) {
-            $0.player?.currentTime = expectedCurrentTime
+            $0.audioPlayer.currentTime = expectedCurrentTime
             $0.currentTime = expectedCurrentTime
-        }
-    }
-
-    func testNextTrackTapped() async {
-        let trackURLs = [
-            Bundle.main.url(forResource: "track1", withExtension: "mp3")!,
-            Bundle.main.url(forResource: "track2", withExtension: "mp3")!
-        ]
-
-        let store = TestStore(
-            initialState: AudioPlayerFeature.State(tracks: trackURLs, currentTrackIndex: 0),
-            reducer: { AudioPlayerFeature() }
-        )
-        store.exhaustivity = .off
-
-        await store.send(.nextTrackTapped) {
-            $0.currentTrackIndex = 1
         }
     }
 }

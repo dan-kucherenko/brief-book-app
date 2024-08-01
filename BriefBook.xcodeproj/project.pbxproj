@@ -12,6 +12,7 @@
 		A5467E672C4A86B4004F0EA9 /* AudioPlayerControllersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E662C4A86B4004F0EA9 /* AudioPlayerControllersView.swift */; };
 		A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6B2C4C2718004F0EA9 /* TabsView.swift */; };
 		A5467E6E2C4C4D98004F0EA9 /* TabsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */; };
+		A54C47532C5BD441004B117F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47522C5BD441004B117F /* AudioPlayer.swift */; };
 		A568B52B2C51A9F600092AB2 /* track2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5272C51A9F600092AB2 /* track2.mp3 */; };
 		A568B52C2C51A9F600092AB2 /* track4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5282C51A9F600092AB2 /* track4.mp3 */; };
 		A568B52D2C51A9F600092AB2 /* track3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5292C51A9F600092AB2 /* track3.mp3 */; };
@@ -46,6 +47,7 @@
 		A5467E662C4A86B4004F0EA9 /* AudioPlayerControllersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerControllersView.swift; sourceTree = "<group>"; };
 		A5467E6B2C4C2718004F0EA9 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsFeature.swift; sourceTree = "<group>"; };
+		A54C47522C5BD441004B117F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		A568B5272C51A9F600092AB2 /* track2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track2.mp3; sourceTree = "<group>"; };
 		A568B5282C51A9F600092AB2 /* track4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track4.mp3; sourceTree = "<group>"; };
 		A568B5292C51A9F600092AB2 /* track3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track3.mp3; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		A5467E642C4A853D004F0EA9 /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A54C47512C5BD42A004B117F /* AudioPlayerFacade */,
 				A5467E652C4A86A1004F0EA9 /* AudioPlayerControllersView */,
 				A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */,
 				A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */,
@@ -110,6 +113,14 @@
 				A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		A54C47512C5BD42A004B117F /* AudioPlayerFacade */ = {
+			isa = PBXGroup;
+			children = (
+				A54C47522C5BD441004B117F /* AudioPlayer.swift */,
+			);
+			path = AudioPlayerFacade;
 			sourceTree = "<group>";
 		};
 		A568B5262C51A92700092AB2 /* Tracks */ = {
@@ -327,6 +338,7 @@
 				A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */,
 				A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */,
 				A5E305E12C4DD130004D120A /* Book.swift in Sources */,
+				A54C47532C5BD441004B117F /* AudioPlayer.swift in Sources */,
 				A5A6D1D22C46D27E00FC1EAB /* BriefBookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

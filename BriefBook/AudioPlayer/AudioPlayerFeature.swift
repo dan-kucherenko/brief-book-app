@@ -5,8 +5,8 @@
 //  Created by Daniil on 19.07.2024.
 //
 
+import Foundation
 import ComposableArchitecture
-import AVFAudio
 
 @Reducer
 struct AudioPlayerFeature {
@@ -16,7 +16,7 @@ struct AudioPlayerFeature {
         var totalTime: TimeInterval = 0.0
         var currentTime: TimeInterval = 0.0
         var speed: Speed = .normal
-        var player: AVAudioPlayer?
+        var audioPlayer = AudioPlayer()
 
         enum Speed: Float {
             case slow = 0.5
@@ -60,12 +60,8 @@ struct AudioPlayerFeature {
             switch action {
             case .setupPlayer(let url):
                 do {
-                    guard let url else { return .none }
-                    let player = try AVAudioPlayer(contentsOf: url)
-                    player.prepareToPlay()
-                    player.enableRate = true
-                    state.player = player
-                    state.totalTime = player.duration
+                    try state.audioPlayer.setupPlayer(with: url)
+                    state.totalTime = state.audioPlayer.totalTime
                     state.speed = .normal
                     state.isPlaying = false
                 } catch {
@@ -74,7 +70,7 @@ struct AudioPlayerFeature {
                 return .none
 
             case .stopPlayer:
-                state.player?.stop()
+                state.audioPlayer.stop()
                 return .none
 
             case .totalTimeChanged(let totalTime):
@@ -83,23 +79,23 @@ struct AudioPlayerFeature {
 
             case .timeStampChanged(let newTimeStamp):
                 state.currentTime = newTimeStamp
-                state.player?.currentTime = newTimeStamp
+                state.audioPlayer.currentTime = newTimeStamp
                 return .none
 
             case .updateTimeStampProgress:
-                state.currentTime = state.player?.currentTime ?? 0
+                state.currentTime = state.audioPlayer.currentTime
                 return .none
 
             case .speedChanged:
                 state.speed = state.speed.nextSpeed
-                state.player?.rate = state.speed.rawValue
+                state.audioPlayer.rate = state.speed.rawValue
                 return .none
 
             case .playPauseTapped:
                 if state.isPlaying {
-                    state.player?.pause()
+                    state.audioPlayer.pause()
                 } else {
-                    state.player?.play()
+                    state.audioPlayer.play()
                 }
                 state.isPlaying.toggle()
                 return .none
@@ -108,13 +104,13 @@ struct AudioPlayerFeature {
                 return .none
 
             case .rewindTapped:
-                state.player?.currentTime -= 5
-                state.currentTime = state.player?.currentTime ?? 0
+                state.audioPlayer.rewind(by: 5)
+                state.currentTime = state.audioPlayer.currentTime
                 return .none
 
             case .forwardTapped:
-                state.player?.currentTime += 10
-                state.currentTime = state.player?.currentTime ?? 0
+                state.audioPlayer.forward(by: 10)
+                state.currentTime = state.audioPlayer.currentTime
                 return .none
 
             case .nextTrackTapped:
