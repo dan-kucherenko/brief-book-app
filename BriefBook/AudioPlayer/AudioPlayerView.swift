@@ -9,8 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct AudioPlayerView: View {
-    @Bindable var store: StoreOf<AudioPlayerFeature>
-    var url: URL?
+    let store: StoreOf<AudioPlayerFeature>
 
     var body: some View {
         VStack {
@@ -19,16 +18,8 @@ struct AudioPlayerView: View {
             AudioPlayerControllers(store: store)
                 .padding(.top, 30)
         }
-        .onAppear {
-            if let url = url {
-                store.send(.setupPlayer(url))
-            }
-        }
         .onReceive(Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()) { _ in
             store.send(.updateTimeStampProgress)
-        }
-        .onDisappear {
-            store.send(.stopPlayer)
         }
     }
 }

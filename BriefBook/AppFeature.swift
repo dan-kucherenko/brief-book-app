@@ -5,7 +5,6 @@
 //  Created by Daniil on 23.07.2024.
 //
 
-import Foundation
 import ComposableArchitecture
 
 @Reducer
@@ -37,6 +36,10 @@ struct AppFeature {
             switch action {
             case .audioAction(let audioAction):
                 switch audioAction {
+                case .setupPlayer:
+                    return .none
+                case .stopPlayer:
+                    return .none
                 case .previousTrackTapped:
                     return .send(.bookInfoAction(.keyPointMoveBackward))
                 case .nextTrackTapped:
@@ -53,14 +56,14 @@ struct AppFeature {
                 case .setInitialValues(let book):
                     state.bookInfoState = BookInformationFeature.State(
                         keypoint: 1,
-                        chapterTitle: book.chapters.first!,
+                        chapterTitle: book.chapters.first ?? "Unknown chapter",
                         chapters: book.chapters,
                         audioTracks: book.audioTracks
                     )
                     return .none
 
                 case .keyPointChanged(let newTrack):
-                    return .send(.audioAction(.setupPlayer(newTrack!)))
+                    return .send(.audioAction(.setupPlayer(newTrack)))
 
                 default:
                     return .none
