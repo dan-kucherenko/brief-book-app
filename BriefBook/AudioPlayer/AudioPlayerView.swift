@@ -31,9 +31,13 @@ extension AudioPlayerView {
             Text("\(formatTime(store.currentTime))")
                 .frame(minWidth: 50, alignment: .leading)
 
+            Spacer()
+
             Slider(value: $store.currentTime.sending(\.timeStampChanged), in: 0...store.totalTime)
-            .layoutPriority(1)
-            .tint(.blue)
+                .tint(.blue)
+                .frame(width: 260)
+
+            Spacer()
 
             Text("\(formatTime(store.totalTime))")
                 .frame(minWidth: 50, alignment: .trailing)
