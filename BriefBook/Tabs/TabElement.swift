@@ -34,7 +34,7 @@ extension TabElement {
         Image(systemName: image)
             .frame(width: 40, height: 40)
             .font(.system(size: 20))
-            .foregroundColor(store.selectedTab == tab ? .white : .primary)
+            .foregroundColor(store.selectedTab == tab ? .white : .tabBtn)
     }
 }
 
