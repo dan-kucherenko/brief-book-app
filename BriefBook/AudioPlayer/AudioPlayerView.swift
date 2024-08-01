@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct AudioPlayerView: View {
-    let store: StoreOf<AudioPlayerFeature>
+    @Bindable var store: StoreOf<AudioPlayerFeature>
 
     var body: some View {
         VStack {
@@ -31,11 +31,7 @@ extension AudioPlayerView {
             Text("\(formatTime(store.currentTime))")
                 .frame(minWidth: 50, alignment: .leading)
 
-            Slider(value: Binding(get: {
-                store.currentTime
-            }, set: { newValue in
-                store.send(.timeStampChanged(newValue))
-            }), in: 0...store.totalTime)
+            Slider(value: $store.currentTime.sending(\.timeStampChanged), in: 0...store.totalTime)
             .layoutPriority(1)
             .tint(.blue)
 
