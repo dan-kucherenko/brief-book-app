@@ -14,20 +14,27 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            BookInformationView(store: store.scope(state: \.bookInfoState, action: \.bookInfoAction))
-
-            AudioPlayerView(
-                store: store.scope(state: \.audioState, action: \.audioAction),
-                url: book.audioTracks.first!
+            BookInformationView(store: store.scope(
+                state: \.bookInfoState, action: \.bookInfoAction)
             )
-            .padding()
+            .padding(.top)
 
-            TabsView(store: store.scope(state: \.tabsState, action: \.tabAction))
-                .padding(.top, 40)
+            AudioPlayerView(store: store.scope(
+                state: \.audioState, action: \.audioAction)
+            )
+            .padding(.horizontal, 15)
+
+            TabsView(store: store.scope(
+                state: \.tabsState, action: \.tabAction)
+            )
+            .padding(.top, 40)
         }
-        .padding()
         .onAppear {
             store.send(.bookInfoAction(.setInitialValues(book: book)))
+            store.send(.audioAction(.setupPlayer(book.audioTracks.first as? URL)))
+        }
+        .onDisappear {
+            store.send(.audioAction(.stopPlayer))
         }
     }
 }

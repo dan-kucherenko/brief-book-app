@@ -13,15 +13,8 @@ struct TabsView: View {
 
     var body: some View {
         HStack(spacing: 25) {
-            TabElement(tab: .audio, image: "headphones", store: store)
-                .onTapGesture {
-                    store.send(.tabSelected(TabsFeature.State.SelectedTab.audio))
-                }
-
-            TabElement(tab: .text, image: "text.alignleft", store: store)
-                .onTapGesture {
-                    store.send(.tabSelected(TabsFeature.State.SelectedTab.text))
-                }
+            headphonesBtnView
+            textBtnView
         }
         .frame(width: 100, height: 40)
         .padding(5)
@@ -30,6 +23,22 @@ struct TabsView: View {
                 .stroke(Color.gray.opacity(0.5), lineWidth: 1)
         )
         .animation(.easeInOut, value: store.selectedTab)
+    }
+}
+
+extension TabsView {
+    private var headphonesBtnView: some View {
+        TabItem(tab: .audio, image: "headphones", store: store)
+            .onTapGesture {
+                store.send(.tabSelected(TabsFeature.State.SelectedTab.audio))
+            }
+    }
+
+    private var textBtnView: some View {
+        TabItem(tab: .text, image: "text.alignleft", store: store)
+            .onTapGesture {
+                store.send(.tabSelected(TabsFeature.State.SelectedTab.text))
+            }
     }
 }
 

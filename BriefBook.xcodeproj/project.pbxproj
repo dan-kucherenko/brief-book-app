@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		A5467E5F2C49B819004F0EA9 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */; };
 		A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */; };
-		A5467E672C4A86B4004F0EA9 /* AudioPlayerControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */; };
+		A5467E672C4A86B4004F0EA9 /* AudioPlayerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E662C4A86B4004F0EA9 /* AudioPlayerComponents.swift */; };
 		A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6B2C4C2718004F0EA9 /* TabsView.swift */; };
 		A5467E6E2C4C4D98004F0EA9 /* TabsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */; };
 		A55CA5072C56CBD5004C7A47 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A55CA5062C56CBD5004C7A47 /* ComposableArchitecture */; };
+		A54C47532C5BD441004B117F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47522C5BD441004B117F /* AudioPlayer.swift */; };
+		A54C47552C5C146A004B117F /* AudioPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47542C5C146A004B117F /* AudioPlayable.swift */; };
+		A54C47572C5C214E004B117F /* AudioPlayerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47562C5C214E004B117F /* AudioPlayerMock.swift */; };
+		A54C475B2C5C276F004B117F /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47582C5C222D004B117F /* AudioPlayerTests.swift */; };
+		A54C475F2C5C3A52004B117F /* AudioPlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C475E2C5C3A52004B117F /* AudioPlayerButton.swift */; };
 		A568B52B2C51A9F600092AB2 /* track2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5272C51A9F600092AB2 /* track2.mp3 */; };
 		A568B52C2C51A9F600092AB2 /* track4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5282C51A9F600092AB2 /* track4.mp3 */; };
 		A568B52D2C51A9F600092AB2 /* track3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5292C51A9F600092AB2 /* track3.mp3 */; };
@@ -23,7 +28,7 @@
 		A5A6D1D42C46D27E00FC1EAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6D1D32C46D27E00FC1EAB /* ContentView.swift */; };
 		A5A6D1D62C46D27F00FC1EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A6D1D52C46D27F00FC1EAB /* Assets.xcassets */; };
 		A5D581FD2C53BE8000E3218D /* AudioPlayerFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D581FC2C53BE8000E3218D /* AudioPlayerFeatureTests.swift */; };
-		A5D582062C54742300E3218D /* TabElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D582052C54742300E3218D /* TabElement.swift */; };
+		A5D582062C54742300E3218D /* TabsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D582052C54742300E3218D /* TabsComponent.swift */; };
 		A5E305DE2C4DD00E004D120A /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E305DD2C4DD00E004D120A /* BookInformationView.swift */; };
 		A5E305E12C4DD130004D120A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E305E02C4DD130004D120A /* Book.swift */; };
 		A5E77C962C4FB28100333DB0 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E77C952C4FB28100333DB0 /* AppFeature.swift */; };
@@ -43,9 +48,14 @@
 /* Begin PBXFileReference section */
 		A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFeature.swift; sourceTree = "<group>"; };
-		A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerControllers.swift; sourceTree = "<group>"; };
+		A5467E662C4A86B4004F0EA9 /* AudioPlayerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerComponents.swift; sourceTree = "<group>"; };
 		A5467E6B2C4C2718004F0EA9 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsFeature.swift; sourceTree = "<group>"; };
+		A54C47522C5BD441004B117F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		A54C47542C5C146A004B117F /* AudioPlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayable.swift; sourceTree = "<group>"; };
+		A54C47562C5C214E004B117F /* AudioPlayerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerMock.swift; sourceTree = "<group>"; };
+		A54C47582C5C222D004B117F /* AudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
+		A54C475E2C5C3A52004B117F /* AudioPlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerButton.swift; sourceTree = "<group>"; };
 		A568B5272C51A9F600092AB2 /* track2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track2.mp3; sourceTree = "<group>"; };
 		A568B5282C51A9F600092AB2 /* track4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track4.mp3; sourceTree = "<group>"; };
 		A568B5292C51A9F600092AB2 /* track3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track3.mp3; sourceTree = "<group>"; };
@@ -58,7 +68,7 @@
 		A5A6D1D52C46D27F00FC1EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5A6D1DE2C46D27F00FC1EAB /* BriefBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BriefBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D581FC2C53BE8000E3218D /* AudioPlayerFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerFeatureTests.swift; sourceTree = "<group>"; };
-		A5D582052C54742300E3218D /* TabElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabElement.swift; sourceTree = "<group>"; };
+		A5D582052C54742300E3218D /* TabsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsComponent.swift; sourceTree = "<group>"; };
 		A5E305DD2C4DD00E004D120A /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
 		A5E305E02C4DD130004D120A /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		A5E77C952C4FB28100333DB0 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
@@ -87,32 +97,37 @@
 		A5467E642C4A853D004F0EA9 /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				A5467E652C4A86A1004F0EA9 /* AudioControllers */,
+				A54C47512C5BD42A004B117F /* AudioPlayerFacade */,
+				A5467E662C4A86B4004F0EA9 /* AudioPlayerComponents.swift */,
 				A5467E5E2C49B819004F0EA9 /* AudioPlayerView.swift */,
 				A5467E622C49C174004F0EA9 /* AudioPlayerFeature.swift */,
+				A54C475E2C5C3A52004B117F /* AudioPlayerButton.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
 		};
-		A5467E652C4A86A1004F0EA9 /* AudioControllers */ = {
+		A5467E6A2C4C2610004F0EA9 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				A5467E662C4A86B4004F0EA9 /* AudioPlayerControllers.swift */,
-			);
-			path = AudioControllers;
-			sourceTree = "<group>";
-		};
-		A5467E6A2C4C2610004F0EA9 /* TabsView */ = {
-			isa = PBXGroup;
-			children = (
-				A5D582052C54742300E3218D /* TabElement.swift */,
+				A5D582052C54742300E3218D /* TabsComponent.swift */,
 				A5467E6B2C4C2718004F0EA9 /* TabsView.swift */,
 				A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */,
 			);
-			path = TabsView;
+			path = Tabs;
 			sourceTree = "<group>";
 		};
-		A568B5262C51A92700092AB2 /* Tracks */ = {
+		A54C47512C5BD42A004B117F /* AudioPlayerFacade */ = {
+			isa = PBXGroup;
+			children = (
+				A54C47522C5BD441004B117F /* AudioPlayer.swift */,
+				A54C47582C5C222D004B117F /* AudioPlayerTests.swift */,
+				A54C47542C5C146A004B117F /* AudioPlayable.swift */,
+				A54C47562C5C214E004B117F /* AudioPlayerMock.swift */,
+			);
+			path = AudioPlayerFacade;
+			sourceTree = "<group>";
+		};
+		A568B5262C51A92700092AB2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				A568B52A2C51A9F600092AB2 /* track1.mp3 */,
@@ -120,7 +135,7 @@
 				A568B5292C51A9F600092AB2 /* track3.mp3 */,
 				A568B5282C51A9F600092AB2 /* track4.mp3 */,
 			);
-			path = Tracks;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A5A6D1C52C46D27E00FC1EAB = {
@@ -144,11 +159,11 @@
 		A5A6D1D02C46D27E00FC1EAB /* BriefBook */ = {
 			isa = PBXGroup;
 			children = (
-				A568B5262C51A92700092AB2 /* Tracks */,
+				A568B5262C51A92700092AB2 /* Resources */,
 				A5E305DF2C4DD128004D120A /* Model */,
-				A5E305DC2C4DCFBE004D120A /* BookInformationView */,
+				A5E305DC2C4DCFBE004D120A /* BookInformation */,
 				A5467E642C4A853D004F0EA9 /* AudioPlayer */,
-				A5467E6A2C4C2610004F0EA9 /* TabsView */,
+				A5467E6A2C4C2610004F0EA9 /* Tabs */,
 				A5A6D1D12C46D27E00FC1EAB /* BriefBookApp.swift */,
 				A5E77C952C4FB28100333DB0 /* AppFeature.swift */,
 				A5A6D1D32C46D27E00FC1EAB /* ContentView.swift */,
@@ -167,13 +182,13 @@
 			path = BriefBookTests;
 			sourceTree = "<group>";
 		};
-		A5E305DC2C4DCFBE004D120A /* BookInformationView */ = {
+		A5E305DC2C4DCFBE004D120A /* BookInformation */ = {
 			isa = PBXGroup;
 			children = (
 				A5E305DD2C4DD00E004D120A /* BookInformationView.swift */,
 				A5E77C972C4FBCC500333DB0 /* BookInformationFeature.swift */,
 			);
-			path = BookInformationView;
+			path = BookInformation;
 			sourceTree = "<group>";
 		};
 		A5E305DF2C4DD128004D120A /* Model */ = {
@@ -317,17 +332,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E77C982C4FBCC500333DB0 /* BookInformationFeature.swift in Sources */,
+				A54C47572C5C214E004B117F /* AudioPlayerMock.swift in Sources */,
 				A5467E5F2C49B819004F0EA9 /* AudioPlayerView.swift in Sources */,
+				A54C475B2C5C276F004B117F /* AudioPlayerTests.swift in Sources */,
 				A5467E6E2C4C4D98004F0EA9 /* TabsFeature.swift in Sources */,
 				A5E77C962C4FB28100333DB0 /* AppFeature.swift in Sources */,
 				A5E305DE2C4DD00E004D120A /* BookInformationView.swift in Sources */,
 				A5A6D1D42C46D27E00FC1EAB /* ContentView.swift in Sources */,
-				A5D582062C54742300E3218D /* TabElement.swift in Sources */,
-				A5467E672C4A86B4004F0EA9 /* AudioPlayerControllers.swift in Sources */,
+				A5D582062C54742300E3218D /* TabsComponent.swift in Sources */,
+				A5467E672C4A86B4004F0EA9 /* AudioPlayerComponents.swift in Sources */,
+				A54C47552C5C146A004B117F /* AudioPlayable.swift in Sources */,
 				A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */,
 				A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */,
 				A5E305E12C4DD130004D120A /* Book.swift in Sources */,
+				A54C47532C5BD441004B117F /* AudioPlayer.swift in Sources */,
 				A5A6D1D22C46D27E00FC1EAB /* BriefBookApp.swift in Sources */,
+				A54C475F2C5C3A52004B117F /* AudioPlayerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24TT693G4C;
@@ -495,6 +516,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -510,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 24TT693G4C;
@@ -529,6 +552,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.kucherenko.BriefBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

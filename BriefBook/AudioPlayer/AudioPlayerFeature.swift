@@ -7,19 +7,17 @@
 
 import Foundation
 import ComposableArchitecture
-import AVFAudio
 
 @Reducer
 struct AudioPlayerFeature {
+    var audioPlayer: any AudioPlayable
+
     @ObservableState
     struct State: Equatable {
         var isPlaying = false
         var totalTime: TimeInterval = 0.0
         var currentTime: TimeInterval = 0.0
         var speed: Speed = .normal
-        var player: AVAudioPlayer?
-        var tracks: [URL] = []
-        var currentTrackIndex = 0
 
         enum Speed: Float {
             case slow = 0.5
@@ -45,7 +43,7 @@ struct AudioPlayerFeature {
     }
 
     enum Action {
-        case setupPlayer(URL)
+        case setupPlayer(URL?)
         case stopPlayer
         case totalTimeChanged(TimeInterval)
         case timeStampChanged(TimeInterval)
@@ -62,12 +60,10 @@ struct AudioPlayerFeature {
         Reduce { state, action in
             switch action {
             case .setupPlayer(let url):
+                guard let url else { return .none }
                 do {
-                    let player = try AVAudioPlayer(contentsOf: url)
-                    player.prepareToPlay()
-                    player.enableRate = true
-                    state.player = player
-                    state.totalTime = player.duration
+                    try audioPlayer.setupPlayer(with: url)
+                    state.totalTime = audioPlayer.totalTime
                     state.speed = .normal
                     state.isPlaying = false
                 } catch {
@@ -76,7 +72,7 @@ struct AudioPlayerFeature {
                 return .none
 
             case .stopPlayer:
-                state.player?.stop()
+                audioPlayer.stop()
                 return .none
 
             case .totalTimeChanged(let totalTime):
@@ -85,51 +81,41 @@ struct AudioPlayerFeature {
 
             case .timeStampChanged(let newTimeStamp):
                 state.currentTime = newTimeStamp
-                state.player?.currentTime = newTimeStamp
+                audioPlayer.currentTime = newTimeStamp
                 return .none
 
             case .updateTimeStampProgress:
-                state.currentTime = state.player?.currentTime ?? 0
+                state.currentTime = audioPlayer.currentTime
                 return .none
 
             case .speedChanged:
                 state.speed = state.speed.nextSpeed
-                state.player?.rate = state.speed.rawValue
+                audioPlayer.rate = state.speed.rawValue
                 return .none
 
             case .playPauseTapped:
                 if state.isPlaying {
-                    state.player?.pause()
+                    audioPlayer.pause()
                 } else {
-                    state.player?.play()
+                    audioPlayer.play()
                 }
                 state.isPlaying.toggle()
                 return .none
 
             case .previousTrackTapped:
-                if state.currentTrackIndex > 0 {
-                    state.currentTrackIndex -= 1
-                    let newTrack = state.tracks[state.currentTrackIndex]
-                    return .send(.setupPlayer(newTrack))
-                }
                 return .none
 
             case .rewindTapped:
-                state.player?.currentTime -= 5
-                state.currentTime = state.player?.currentTime ?? 0
+                audioPlayer.rewind(by: 5)
+                state.currentTime = audioPlayer.currentTime
                 return .none
 
             case .forwardTapped:
-                state.player?.currentTime += 10
-                state.currentTime = state.player?.currentTime ?? 0
+                audioPlayer.forward(by: 10)
+                state.currentTime = audioPlayer.currentTime
                 return .none
 
             case .nextTrackTapped:
-                if state.currentTrackIndex < state.tracks.count - 1 {
-                    state.currentTrackIndex += 1
-                    let newTrack = state.tracks[state.currentTrackIndex]
-                    return .send(.setupPlayer(newTrack))
-                }
                 return .none
             }
         }

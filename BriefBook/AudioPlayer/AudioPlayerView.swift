@@ -10,54 +10,55 @@ import ComposableArchitecture
 
 struct AudioPlayerView: View {
     @Bindable var store: StoreOf<AudioPlayerFeature>
-    @Environment(\.colorScheme) var colorScheme
-    var url: URL?
 
     var body: some View {
         VStack {
-            HStack {
-                Text("\(formatTime(store.currentTime))")
-
-                Slider(value: Binding(get: {
-                    store.currentTime
-                }, set: { newValue in
-                    store.send(.timeStampChanged(newValue))
-                }), in: 0...store.totalTime)
-                .tint(.blue)
-
-                Spacer()
-
-                Text("\(formatTime(store.totalTime))")
-            }
-            .padding(.horizontal)
-
-            Button {
-                store.send(.speedChanged)
-            } label: {
-                Text("Speed x\(store.speed.formatted)")
-                    .bold()
-                    .foregroundStyle(colorScheme == .dark ? .white : .black)
-                    .font(.system(size: 14))
-                    .padding(7)
-            }
-            .frame(width: 90)
-            .background(.gray).opacity(0.2)
-            .cornerRadius(8)
-
+            timeSliderView
+            speedButton
             AudioPlayerControllers(store: store)
                 .padding(.top, 30)
-        }
-        .onAppear {
-            if let url = url {
-                store.send(.setupPlayer(url))
-            }
         }
         .onReceive(Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()) { _ in
             store.send(.updateTimeStampProgress)
         }
-        .onDisappear {
-            store.send(.stopPlayer)
+    }
+}
+
+// MARK: - Decomposed body views
+extension AudioPlayerView {
+    private var timeSliderView: some View {
+        HStack {
+            Text("\(formatTime(store.currentTime))")
+                .foregroundStyle(.gray)
+                .frame(minWidth: 50, alignment: .leading)
+
+            Spacer()
+
+            Slider(value: $store.currentTime.sending(\.timeStampChanged), in: 0...store.totalTime)
+                .tint(.blue)
+                .frame(width: 260)
+
+            Spacer()
+
+            Text("\(formatTime(store.totalTime))")
+                .foregroundStyle(.gray)
+                .frame(minWidth: 50, alignment: .trailing)
         }
+    }
+
+    private var speedButton: some View {
+        Button {
+            store.send(.speedChanged)
+        } label: {
+            Text("Speed x\(store.speed.formatted)")
+                .bold()
+                .foregroundStyle(.speedLabel)
+                .font(.system(size: 14))
+                .padding(7)
+        }
+        .frame(width: 90)
+        .background(.gray.opacity(0.2))
+        .cornerRadius(8)
     }
 }
 
@@ -71,6 +72,6 @@ extension AudioPlayerView {
 
 #Preview {
     AudioPlayerView(store: Store(initialState: AudioPlayerFeature.State()) {
-        AudioPlayerFeature()
+        AudioPlayerFeature(audioPlayer: AudioPlayer.shared)
     })
 }

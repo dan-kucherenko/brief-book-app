@@ -11,7 +11,7 @@ struct Book {
     let name: String
     let bookImage: String
     let chapters: [String]
-    let audioTracks: [URL]
+    let audioTracks: [URL?]
 
     static var mock: Book {
         Book(
@@ -29,10 +29,10 @@ struct Book {
             ],
 
             audioTracks: [
-                Bundle.main.url(forResource: "track1", withExtension: "mp3")!,
-                Bundle.main.url(forResource: "track2", withExtension: "mp3")!,
-                Bundle.main.url(forResource: "track3", withExtension: "mp3")!,
-                Bundle.main.url(forResource: "track4", withExtension: "mp3")!
+                Bundle.main.url(forResource: "track1", withExtension: "mp3"),
+                Bundle.main.url(forResource: "track2", withExtension: "mp3"),
+                Bundle.main.url(forResource: "track3", withExtension: "mp3"),
+                Bundle.main.url(forResource: "track4", withExtension: "mp3")
             ]
         )
     }
