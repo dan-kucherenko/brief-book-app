@@ -31,7 +31,7 @@ extension BookInformationView {
 
     private var keyPointsView: some View {
         Text("KEY POINT \(store.keypoint) OF \(store.chapters.count)")
-            .font(.subheadline)
+            .font(.headline)
             .bold()
             .padding(.top, 30)
             .foregroundStyle(.gray)
