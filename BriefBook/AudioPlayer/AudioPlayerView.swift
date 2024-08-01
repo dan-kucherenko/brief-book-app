@@ -29,6 +29,7 @@ extension AudioPlayerView {
     private var timeSliderView: some View {
         HStack {
             Text("\(formatTime(store.currentTime))")
+                .foregroundStyle(.gray)
                 .frame(minWidth: 50, alignment: .leading)
 
             Spacer()
@@ -40,6 +41,7 @@ extension AudioPlayerView {
             Spacer()
 
             Text("\(formatTime(store.totalTime))")
+                .foregroundStyle(.gray)
                 .frame(minWidth: 50, alignment: .trailing)
         }
     }
