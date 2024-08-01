@@ -26,7 +26,7 @@ struct AppFeature {
             BookInformationFeature()
         }
         Scope(state: \.audioState, action: \.audioAction) {
-            AudioPlayerFeature()
+            AudioPlayerFeature(audioPlayer: AudioPlayer.shared)
         }
         Scope(state: \.tabsState, action: \.tabAction) {
             TabsFeature()

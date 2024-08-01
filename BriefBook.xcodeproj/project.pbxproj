@@ -13,6 +13,7 @@
 		A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6B2C4C2718004F0EA9 /* TabsView.swift */; };
 		A5467E6E2C4C4D98004F0EA9 /* TabsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */; };
 		A54C47532C5BD441004B117F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47522C5BD441004B117F /* AudioPlayer.swift */; };
+		A54C47552C5C146A004B117F /* AudioPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C47542C5C146A004B117F /* AudioPlayable.swift */; };
 		A568B52B2C51A9F600092AB2 /* track2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5272C51A9F600092AB2 /* track2.mp3 */; };
 		A568B52C2C51A9F600092AB2 /* track4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5282C51A9F600092AB2 /* track4.mp3 */; };
 		A568B52D2C51A9F600092AB2 /* track3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A568B5292C51A9F600092AB2 /* track3.mp3 */; };
@@ -48,6 +49,7 @@
 		A5467E6B2C4C2718004F0EA9 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		A5467E6D2C4C4D98004F0EA9 /* TabsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsFeature.swift; sourceTree = "<group>"; };
 		A54C47522C5BD441004B117F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		A54C47542C5C146A004B117F /* AudioPlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayable.swift; sourceTree = "<group>"; };
 		A568B5272C51A9F600092AB2 /* track2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track2.mp3; sourceTree = "<group>"; };
 		A568B5282C51A9F600092AB2 /* track4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track4.mp3; sourceTree = "<group>"; };
 		A568B5292C51A9F600092AB2 /* track3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track3.mp3; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A54C47522C5BD441004B117F /* AudioPlayer.swift */,
+				A54C47542C5C146A004B117F /* AudioPlayable.swift */,
 			);
 			path = AudioPlayerFacade;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				A5A6D1D42C46D27E00FC1EAB /* ContentView.swift in Sources */,
 				A5D582062C54742300E3218D /* TabElement.swift in Sources */,
 				A5467E672C4A86B4004F0EA9 /* AudioPlayerControllersView.swift in Sources */,
+				A54C47552C5C146A004B117F /* AudioPlayable.swift in Sources */,
 				A5467E6C2C4C2718004F0EA9 /* TabsView.swift in Sources */,
 				A5467E632C49C174004F0EA9 /* AudioPlayerFeature.swift in Sources */,
 				A5E305E12C4DD130004D120A /* Book.swift in Sources */,

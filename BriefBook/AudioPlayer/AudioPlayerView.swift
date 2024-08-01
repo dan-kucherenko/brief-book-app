@@ -70,6 +70,6 @@ extension AudioPlayerView {
 
 #Preview {
     AudioPlayerView(store: Store(initialState: AudioPlayerFeature.State()) {
-        AudioPlayerFeature()
+        AudioPlayerFeature(audioPlayer: AudioPlayer.shared)
     })
 }

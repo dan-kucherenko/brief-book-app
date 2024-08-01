@@ -7,7 +7,11 @@
 
 import AVFAudio
 
-class AudioPlayer {
+class AudioPlayer: NSObject, AudioPlayable {
+    static let shared = AudioPlayer()
+
+    private override init() {}
+
     private var player: AVAudioPlayer?
 
     var isPlaying: Bool {
@@ -36,8 +40,7 @@ class AudioPlayer {
         }
     }
 
-    func setupPlayer(with url: URL?) throws {
-        guard let url else { return }
+    func setupPlayer(with url: URL) throws {
         player = try AVAudioPlayer(contentsOf: url)
         player?.prepareToPlay()
         player?.enableRate = true
@@ -61,11 +64,5 @@ class AudioPlayer {
 
     func forward(by seconds: TimeInterval) {
         player?.currentTime += seconds
-    }
-}
-
-extension AudioPlayer: Equatable {
-    static func == (lhs: AudioPlayer, rhs: AudioPlayer) -> Bool {
-        lhs.player == rhs.player
     }
 }

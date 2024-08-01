@@ -76,6 +76,6 @@ extension AudioPlayerControllers {
 
 #Preview {
     AudioPlayerControllers(store: Store(initialState: AudioPlayerFeature.State()) {
-        AudioPlayerFeature()
+        AudioPlayerFeature(audioPlayer: AudioPlayer.shared)
     })
 }
