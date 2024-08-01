@@ -38,7 +38,6 @@ extension AudioPlayerView {
             Text("\(formatTime(store.totalTime))")
                 .frame(minWidth: 50, alignment: .trailing)
         }
-        .padding(.horizontal)
     }
 
     private var speedButton: some View {

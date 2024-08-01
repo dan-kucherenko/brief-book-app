@@ -17,18 +17,18 @@ struct ContentView: View {
             BookInformationView(store: store.scope(
                 state: \.bookInfoState, action: \.bookInfoAction)
             )
+            .padding(.top)
 
             AudioPlayerView(store: store.scope(
                 state: \.audioState, action: \.audioAction)
             )
-            .padding()
+            .padding(.horizontal, 15)
 
             TabsView(store: store.scope(
                 state: \.tabsState, action: \.tabAction)
             )
-                .padding(.top, 40)
+            .padding(.top, 40)
         }
-        .padding()
         .onAppear {
             store.send(.bookInfoAction(.setInitialValues(book: book)))
             store.send(.audioAction(.setupPlayer(book.audioTracks.first as? URL)))

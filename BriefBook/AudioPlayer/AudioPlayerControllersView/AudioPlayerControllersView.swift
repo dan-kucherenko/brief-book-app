@@ -12,7 +12,7 @@ struct AudioPlayerControllers: View {
     let store: StoreOf<AudioPlayerFeature>
 
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 25) {
             backwardBtnView
             rewindBtnView
             playPauseBtnView
