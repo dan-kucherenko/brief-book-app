@@ -16,7 +16,7 @@ struct BookInformationFeature {
         var keypoint = 1
         var chapterTitle: String = ""
         var chapters: [String] = []
-        var audioTracks: [URL] = []
+        var audioTracks: [URL?] = []
     }
 
     enum Action {
@@ -33,7 +33,7 @@ struct BookInformationFeature {
             case .setInitialValues(let book):
                 state.keypoint = 1
                 state.chapters = book.chapters
-                state.chapterTitle = book.chapters.first!
+                state.chapterTitle = book.chapters.first ?? "Unknown chapter"
                 state.audioTracks = book.audioTracks
                 return .none
 

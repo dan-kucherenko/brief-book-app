@@ -5,7 +5,6 @@
 //  Created by Daniil on 19.07.2024.
 //
 
-import Foundation
 import ComposableArchitecture
 import AVFAudio
 
@@ -18,8 +17,6 @@ struct AudioPlayerFeature {
         var currentTime: TimeInterval = 0.0
         var speed: Speed = .normal
         var player: AVAudioPlayer?
-        var tracks: [URL] = []
-        var currentTrackIndex = 0
 
         enum Speed: Float {
             case slow = 0.5
@@ -45,7 +42,7 @@ struct AudioPlayerFeature {
     }
 
     enum Action {
-        case setupPlayer(URL)
+        case setupPlayer(URL?)
         case stopPlayer
         case totalTimeChanged(TimeInterval)
         case timeStampChanged(TimeInterval)
@@ -63,6 +60,7 @@ struct AudioPlayerFeature {
             switch action {
             case .setupPlayer(let url):
                 do {
+                    guard let url else { return .none }
                     let player = try AVAudioPlayer(contentsOf: url)
                     player.prepareToPlay()
                     player.enableRate = true
@@ -107,11 +105,6 @@ struct AudioPlayerFeature {
                 return .none
 
             case .previousTrackTapped:
-                if state.currentTrackIndex > 0 {
-                    state.currentTrackIndex -= 1
-                    let newTrack = state.tracks[state.currentTrackIndex]
-                    return .send(.setupPlayer(newTrack))
-                }
                 return .none
 
             case .rewindTapped:
@@ -125,11 +118,6 @@ struct AudioPlayerFeature {
                 return .none
 
             case .nextTrackTapped:
-                if state.currentTrackIndex < state.tracks.count - 1 {
-                    state.currentTrackIndex += 1
-                    let newTrack = state.tracks[state.currentTrackIndex]
-                    return .send(.setupPlayer(newTrack))
-                }
                 return .none
             }
         }
