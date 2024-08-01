@@ -20,16 +20,25 @@ struct TabElement: View {
     var body: some View {
         ZStack {
             if store.selectedTab == tab {
-                Circle()
-                    .fill(Color.blue)
-                    .frame(width: tabElementWidth, height: tabElementHeight)
+                circleFill
             }
-
-            Image(systemName: image)
-                .frame(width: tabElementWidth, height: tabElementHeight)
-                .font(.system(size: iconFontSize))
-                .foregroundColor(store.selectedTab == tab ? .white : .primary)
+            tabImage
         }
+    }
+}
+
+extension TabElement {
+    private var circleFill: some View {
+        Circle()
+            .fill(Color.blue)
+            .frame(width: tabElementWidth, height: tabElementHeight)
+    }
+
+    private var tabImage: some View {
+        Image(systemName: image)
+            .frame(width: tabElementWidth, height: tabElementHeight)
+            .font(.system(size: iconFontSize))
+            .foregroundColor(store.selectedTab == tab ? .white : .primary)
     }
 }
 

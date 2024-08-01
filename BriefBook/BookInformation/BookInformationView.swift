@@ -13,23 +13,36 @@ struct BookInformationView: View {
 
     var body: some View {
         VStack {
-            Image(.bookPhotoPlaceholder)
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 240)
-
-            Text("KEY POINT \(store.keypoint) OF \(store.chapters.count)")
-                .font(.subheadline)
-                .bold()
-                .padding(.top, 30)
-                .foregroundStyle(.gray)
-
-            Text(store.chapterTitle)
-                .font(.callout)
-                .multilineTextAlignment(.center)
-                .padding(.top, 5)
-                .padding(.horizontal, 25)
+            bookImageView
+            keyPointsView
+            chapterTitleView
         }
+    }
+}
+
+extension BookInformationView {
+    private var bookImageView: some View {
+        Image(.bookPhotoPlaceholder)
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: 240)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+
+    private var keyPointsView: some View {
+        Text("KEY POINT \(store.keypoint) OF \(store.chapters.count)")
+            .font(.subheadline)
+            .bold()
+            .padding(.top, 30)
+            .foregroundStyle(.gray)
+    }
+
+    private var chapterTitleView: some View {
+        Text(store.chapterTitle)
+            .font(.callout)
+            .multilineTextAlignment(.center)
+            .padding(.top, 5)
+            .padding(.horizontal, 25)
     }
 }
 

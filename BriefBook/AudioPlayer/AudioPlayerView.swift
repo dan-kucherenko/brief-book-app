@@ -14,35 +14,8 @@ struct AudioPlayerView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Text("\(formatTime(store.currentTime))")
-
-                Slider(value: Binding(get: {
-                    store.currentTime
-                }, set: { newValue in
-                    store.send(.timeStampChanged(newValue))
-                }), in: 0...store.totalTime)
-                .tint(.blue)
-
-                Spacer()
-
-                Text("\(formatTime(store.totalTime))")
-            }
-            .padding(.horizontal)
-
-            Button {
-                store.send(.speedChanged)
-            } label: {
-                Text("Speed x\(store.speed.formatted)")
-                    .bold()
-                    .foregroundStyle(.speedLabel)
-                    .font(.system(size: 14))
-                    .padding(7)
-            }
-            .frame(width: 90)
-            .background(.gray).opacity(0.2)
-            .cornerRadius(8)
-
+            timeSliderView
+            speedButton
             AudioPlayerControllers(store: store)
                 .padding(.top, 30)
         }
@@ -57,6 +30,42 @@ struct AudioPlayerView: View {
         .onDisappear {
             store.send(.stopPlayer)
         }
+    }
+}
+
+// MARK: - Decomposed body views
+extension AudioPlayerView {
+    private var timeSliderView: some View {
+        HStack {
+            Text("\(formatTime(store.currentTime))")
+
+            Slider(value: Binding(get: {
+                store.currentTime
+            }, set: { newValue in
+                store.send(.timeStampChanged(newValue))
+            }), in: 0...store.totalTime)
+            .tint(.blue)
+
+            Spacer()
+
+            Text("\(formatTime(store.totalTime))")
+        }
+        .padding(.horizontal)
+    }
+
+    private var speedButton: some View {
+        Button {
+            store.send(.speedChanged)
+        } label: {
+            Text("Speed x\(store.speed.formatted)")
+                .bold()
+                .foregroundStyle(.speedLabel)
+                .font(.system(size: 14))
+                .padding(7)
+        }
+        .frame(width: 90)
+        .background(.gray.opacity(0.2))
+        .cornerRadius(8)
     }
 }
 
