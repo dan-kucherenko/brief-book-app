@@ -13,10 +13,6 @@ struct TabElement: View {
     let image: String
     let store: StoreOf<TabsFeature>
 
-    private let tabElementWidth: CGFloat = 40
-    private let tabElementHeight: CGFloat = 40
-    private let iconFontSize: CGFloat = 20
-
     var body: some View {
         ZStack {
             if store.selectedTab == tab {
@@ -31,13 +27,13 @@ extension TabElement {
     private var circleFill: some View {
         Circle()
             .fill(Color.blue)
-            .frame(width: tabElementWidth, height: tabElementHeight)
+            .frame(width: 40, height: 40)
     }
 
     private var tabImage: some View {
         Image(systemName: image)
-            .frame(width: tabElementWidth, height: tabElementHeight)
-            .font(.system(size: iconFontSize))
+            .frame(width: 40, height: 40)
+            .font(.system(size: 20))
             .foregroundColor(store.selectedTab == tab ? .white : .primary)
     }
 }
